@@ -173,6 +173,11 @@ export const MANIFEST = typeset({
   pointOf: (i: number, n: number) => `Punkt ${i} z ${n}`,
   fullTitle: 'Manifest THE ROOM',
   fullStatus: 'Wersja robocza',
+  /** Krótkie opisy na kartach punktów, które w manifeście są jednym zdaniem (numer karty → opis). */
+  cardNotes: {
+    9: 'Spokój i konsekwencja mówią więcej niż słowa.',
+    10: 'Na rozmowę, namysł i odpoczynek.',
+  } as Record<number, string>,
   full: [
     'Nie mierzymy doskonałości w godzinach. Kto pracuje 80 godzin tygodniowo, dowodzi wytrzymałości, a nie trafności osądu.',
     'Najlepsza praca prawnicza powstaje w jasnej głowie. Hałas, pośpiech i ciągła dostępność nie są oznaką znaczenia, lecz jego przeciwieństwem.',
