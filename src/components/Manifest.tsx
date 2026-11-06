@@ -10,7 +10,11 @@ function splitPoint(text: string): [string, string] {
   return [m[1], m[2]];
 }
 
-const POINTS = MANIFEST.full.map(splitPoint);
+/** Nagłówek i opis karty; punkty jednozdaniowe dostają krótki opis z MANIFEST.cardNotes. */
+const POINTS = MANIFEST.full.map((text, i): [string, string] => {
+  const [head, rest] = splitPoint(text);
+  return [head, rest || MANIFEST.cardNotes[i + 1] || ''];
+});
 
 export function Manifest() {
   const stageRef = useRef<HTMLDivElement>(null);
