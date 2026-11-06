@@ -62,7 +62,7 @@ export function InvitationForm() {
     if (presetCount === 0) return;
     const intent = INTENTS.find((i) => i.id === values.intent)?.label ?? '';
     const m = meetingLabel(values.meeting);
-    setAnnouncement(m ? `Wybrano: ${m.format} — ${m.topic}` : `Wybrano: ${intent}`);
+    setAnnouncement(m ? `Wybrano: ${m.format} - ${m.topic}` : `Wybrano: ${intent}`);
     setFresh(true);
     const t = window.setTimeout(() => setFresh(false), 1600);
     return () => window.clearTimeout(t);
@@ -187,7 +187,9 @@ export function InvitationForm() {
         <div className="chosen-meeting" data-fresh={fresh ? 'true' : 'false'}>
           <p className="chosen-meeting__text">
             <span className="chosen-meeting__label">{FORM.selectedMeeting}:</span>{' '}
-            <strong>{meeting.format}</strong> — {meeting.topic}{' '}
+            <strong>{meeting.format}</strong>
+            {' - '}
+            {meeting.topic}{' '}
             <span className="chosen-meeting__status">({meeting.status})</span>
           </p>
           <div className="chosen-meeting__actions">

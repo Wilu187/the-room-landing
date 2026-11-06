@@ -1,8 +1,8 @@
 /**
- * Fotografie z Unsplash (licencja Unsplash, kolekcja bezpłatna — nie Unsplash+).
+ * Fotografie z Unsplash (licencja Unsplash, kolekcja bezpłatna - nie Unsplash+).
  * Pliki są pobrane i zoptymalizowane lokalnie: public/images/<name>-<szerokość>.<avif|webp|jpg>
  * (skrypt: npm run images -- <katalog-z-oryginałami>).
- * `focus` steruje kadrowaniem (object-position) — na telefonie i desktopie osobno.
+ * `focus` steruje kadrowaniem (object-position) - na telefonie i desktopie osobno.
  */
 
 export type Photo = {

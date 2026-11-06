@@ -24,12 +24,12 @@ export const NAV = typeset({
   skip: 'Przejdź do treści',
   menuOpen: 'Menu',
   menuClose: 'Zamknij menu',
-  logoLabel: 'THE ROOM — początek strony',
+  logoLabel: 'THE ROOM - początek strony',
 });
 
 /** Wejście na stronę: sygnet rysuje się, drzwi się otwierają, potem przejście do środka (src/lib/intro.ts). */
 export const INTRO = typeset({
-  label: 'THE ROOM — wejście',
+  label: 'THE ROOM - wejście',
   mark: 'THE ROOM',
   line: 'Kameralny krąg adwokatów i radców prawnych w Polsce',
   enter: 'Wejdź',
@@ -50,7 +50,7 @@ export const HERO = typeset({
 export const THEME = typeset({
   label: 'Temat pierwszego roku',
   title: 'Jak mierzyć wartość pracy prawnika?',
-  body: 'Liczba godzin pokazuje, ile czasu poświęcamy sprawie. Nie mówi jednak wszystkiego o jakości decyzji, odpowiedzialności ani wartości naszej pracy dla klienta. Pierwszy rok THE ROOM poświęcamy temu, jak tę wartość oceniać i wyceniać — oraz jak zmieniają ją technologia i organizacja pracy.',
+  body: 'Liczba godzin pokazuje, ile czasu poświęcamy sprawie. Nie mówi jednak wszystkiego o jakości decyzji, odpowiedzialności ani wartości naszej pracy dla klienta. Pierwszy rok THE ROOM poświęcamy temu, jak tę wartość oceniać i wyceniać - oraz jak zmieniają ją technologia i organizacja pracy.',
   questionsTitle: 'Od tych pytań zaczynamy',
   questions: [
     'Co poza czasem pracy powinno decydować o wynagrodzeniu prawnika?',
@@ -87,7 +87,7 @@ export const MEETINGS = typeset({
       format: 'Kolacja THE ROOM',
       topic: 'Jak chcemy prowadzić kancelarię?',
       topicStatus: 'Temat wieczoru',
-      description: 'Kameralna rozmowa o codziennej pracy prawnika — przy wspólnym stole, bez pośpiechu.',
+      description: 'Kameralna rozmowa o codziennej pracy prawnika - przy wspólnym stole, bez pośpiechu.',
     },
   ] satisfies MeetingCopy[],
   labels: {
@@ -128,7 +128,7 @@ export const CIRCLE = typeset({
     {
       number: '01',
       name: 'Artykuły i Bookazine',
-      audience: 'Dla doświadczonych prawników — także tych, którzy nie prowadzą własnej kancelarii.',
+      audience: 'Dla doświadczonych prawników - także tych, którzy nie prowadzą własnej kancelarii.',
       access:
         'Artykuły na stronie będą dostępne dla wszystkich. Bookazine to drukowane wydawnictwo THE ROOM. Pierwszy numer będzie można zamówić po premierze.',
       status: { label: 'Bookazine', value: 'w przygotowaniu' },
@@ -217,7 +217,7 @@ export type Article = {
 export const EDITORIAL = typeset({
   title: 'O pracy prawnika i życiu poza kancelarią',
   intro:
-    'Przygotowujemy teksty o tym, jak zmienia się zawód prawnika — od prowadzenia zespołu i korzystania z technologii po warunki pracy i odpoczynek.',
+    'Przygotowujemy teksty o tym, jak zmienia się zawód prawnika - od prowadzenia zespołu i korzystania z technologii po warunki pracy i odpoczynek.',
   pillarsTitle: 'Obszary redakcyjne',
   pillars: [
     { name: 'Kancelaria 2030', body: 'Prowadzenie kancelarii, zespoły i zmieniające się oczekiwania klientów.' },
@@ -321,9 +321,9 @@ export const FORM = typeset({
     summary: 'Sprawdź zaznaczone pola.',
   },
   demo: {
-    notice: 'To podgląd formularza — wpisane dane nie zostaną wysłane.',
+    notice: 'To podgląd formularza - wpisane dane nie zostaną wysłane.',
     submit: 'Sprawdź formularz',
-    success: 'Formularz jest wypełniony poprawnie. To podgląd — prośba nie została wysłana.',
+    success: 'Formularz jest wypełniony poprawnie. To podgląd - prośba nie została wysłana.',
   },
   live: {
     submit: 'Wyślij prośbę o zaproszenie',

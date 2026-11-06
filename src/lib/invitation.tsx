@@ -20,7 +20,7 @@ type InvitationContextValue = {
   setField: <K extends keyof InvitationValues>(key: K, value: InvitationValues[K]) => void;
   /** Wywoływane przez CTA w innych sekcjach: ustawia intencję (i spotkanie), nie czyści danych. */
   preset: (intent: Intent, meeting?: MeetingId | null) => void;
-  /** Numer kolejnego ustawienia z zewnątrz — formularz podświetla wtedy podsumowanie. */
+  /** Numer kolejnego ustawienia z zewnątrz - formularz podświetla wtedy podsumowanie. */
   presetCount: number;
 };
 
@@ -44,7 +44,7 @@ export function InvitationProvider({ children }: { children: ReactNode }) {
   const setField = useCallback<InvitationContextValue['setField']>((key, value) => {
     setValues((prev) => {
       const next = { ...prev, [key]: value };
-      // Spotkanie należy do konkretnego formatu — zmiana intencji na inny format zdejmuje wybór.
+      // Spotkanie należy do konkretnego formatu - zmiana intencji na inny format zdejmuje wybór.
       if (key === 'intent' && prev.meeting && !prev.meeting.startsWith(String(value))) {
         next.meeting = null;
       }

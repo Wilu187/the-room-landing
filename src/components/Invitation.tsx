@@ -8,7 +8,7 @@ import { InvitationForm } from './InvitationForm';
 /**
  * Lewa kolumna (opis + FAQ) towarzyszy długiemu formularzowi. Gdy mieści się w oknie,
  * trzyma się pod nagłówkiem; gdy jest wyższa (np. po rozwinięciu odpowiedzi FAQ),
- * trzyma się dolnej krawędzi okna — rozwinięta treść nigdy nie znika pod krawędzią,
+ * trzyma się dolnej krawędzi okna - rozwinięta treść nigdy nie znika pod krawędzią,
  * a kolumna nie przeskakuje w inne miejsce strony.
  */
 function useStickyOffset() {
