@@ -2,8 +2,8 @@ import { HERO } from '../content/site';
 import { PHOTOS } from '../content/images';
 import { Icon, Photo, stagger } from './primitives';
 
-/** Tytuł w dwóch wierszach (łamanie po przecinku); każdy wiersz wchodzi osobno spod progu. */
-const TITLE_LINES = HERO.title.split(/(?<=,)\s+/);
+/** Tytuł w dwóch wierszach (łamanie po kropce kończącej pierwsze zdanie); każdy wiersz wchodzi osobno spod progu. */
+const TITLE_LINES = HERO.title.split(/(?<=\.)\s+/);
 
 /** Ściany ramy w kolejności rysowania: od progu wejścia, w górę, do środka sufitu. */
 const WALLS = ['bl', 'br', 'l', 'r', 'tl', 'tr'] as const;
