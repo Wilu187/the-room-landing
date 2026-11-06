@@ -134,8 +134,9 @@ export function Footer() {
                 <li key={p.name}>
                   <a href={p.credit.sourceUrl} rel="noopener">
                     {p.credit.author}
-                  </a>{' '}
-                  — {p.credit.usage}
+                  </a>
+                  {' - '}
+                  {p.credit.usage}
                 </li>
               ))}
             </ul>

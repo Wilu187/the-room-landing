@@ -3,7 +3,8 @@
  * from ending a line by binding them to the next word with a no-break space.
  */
 const SINGLE_LETTER = /(^|[\s(„])([aiouwzAIOUWZ])\s+/g;
-const DASH = /\s+([—–])\s+/g;
+/** Myślnik między słowami („ - ” albo półpauza „ – ”): wiązany z poprzednim słowem, żeby nie zaczynał wiersza. */
+const DASH = /\s+([–-])\s+/g;
 
 export function pl(text: string): string {
   return text

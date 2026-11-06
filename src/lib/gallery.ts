@@ -2,7 +2,7 @@
  * Galeria na łuku (inspiracja: React Bits „Circular Gallery”), na zwykłych elementach HTML.
  * Karty jadą po łuku okręgu i obracają się stycznie do niego; pętla jest nieskończona.
  * Sterowanie: przeciąganie (z rozpędem i dociąganiem), poziomy gest touchpada, strzałki, przyciski.
- * Pionowe kółko myszy NIE jest przejmowane — strona przewija się normalnie.
+ * Pionowe kółko myszy NIE jest przejmowane - strona przewija się normalnie.
  */
 export type GalleryApi = { go: (delta: number) => void; destroy: () => void };
 
@@ -46,7 +46,7 @@ export function setupGallery(
       const x = wrap(i * spacing - current + L / 2, L) - L / 2;
       const reach = Math.min(Math.abs(x), half, radius * 0.999);
       const arc = radius - Math.sqrt(radius * radius - reach * reach);
-      // poza ekranem tor jest dalej prostą styczną — karta nie „zawraca”
+      // poza ekranem tor jest dalej prostą styczną - karta nie „zawraca”
       const extra = Math.max(0, Math.abs(x) - half);
       const angle = Math.sign(x) * Math.asin(reach / radius);
       const y = arc + extra * Math.tan(Math.abs(angle));
@@ -101,7 +101,7 @@ export function setupGallery(
     if (!drag.decided) {
       if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
       if (Math.abs(dy) > Math.abs(dx)) {
-        drag = null; // gest pionowy — to przewijanie strony
+        drag = null; // gest pionowy - to przewijanie strony
         return;
       }
       drag.decided = true;

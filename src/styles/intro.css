@@ -1,4 +1,4 @@
-/* WEJŚCIE NA STRONĘ — komponent Intro, sterowanie w src/lib/intro.ts.
+/* WEJŚCIE NA STRONĘ - komponent Intro, sterowanie w src/lib/intro.ts.
    Włączane skryptem w <head> (html.intro-on) tylko wtedy, gdy działa JS i adres nie prowadzi
    do konkretnej sekcji (#…). Bez tej klasy sekcji nie ma, a strona wygląda i działa jak dotąd. */
 

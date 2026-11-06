@@ -101,7 +101,7 @@
   text-decoration-color: currentColor;
 }
 
-/* Zdjęcie w „pokoju”: cienka rama z wejściem u dołu — echo sygnetu THE ROOM */
+/* Zdjęcie w „pokoju”: cienka rama z wejściem u dołu - echo sygnetu THE ROOM */
 .room-plate {
   --frame-gap: 14px;
   position: relative;
@@ -932,7 +932,7 @@
 }
 
 /* Wąska karta (telefon oraz dwie karty obok siebie przy 900–1199 px): monogram z imieniem i rolą
-   w jednym wierszu, biogram i cytat na pełnej szerokości — zamiast tekstu ściśniętego obok portretu. */
+   w jednym wierszu, biogram i cytat na pełnej szerokości - zamiast tekstu ściśniętego obok portretu. */
 @media (max-width: 559px), (min-width: 900px) and (max-width: 1199px) {
   .host {
     grid-template-columns: 96px minmax(0, 1fr);

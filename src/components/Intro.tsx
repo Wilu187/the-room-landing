@@ -69,7 +69,7 @@ export function Intro() {
               vectorEffect="non-scaling-stroke"
               opacity="0"
             />
-            {/* lewa, cienka linia Λ (50%) — pojawia się na końcu */}
+            {/* lewa, cienka linia Λ (50%) - pojawia się na końcu */}
             <polygon data-intro="left" points="42.31,54.60 43.96,54.60 27.37,91.00 25.72,91.00" fill="#f3efe8" opacity="0" />
             {/* prawe ramię Λ = jedyne skrzydło drzwi */}
             <polygon data-intro="door" fill="#f3efe8" visibility="hidden" />

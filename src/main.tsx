@@ -10,6 +10,6 @@ const app = (
   </StrictMode>
 );
 
-// W buildzie produkcyjnym HTML jest wyrenderowany z góry (treść działa bez JS) — wtedy hydratujemy.
+// W buildzie produkcyjnym HTML jest wyrenderowany z góry (treść działa bez JS) - wtedy hydratujemy.
 if (root.hasChildNodes()) hydrateRoot(root, app);
 else createRoot(root).render(app);

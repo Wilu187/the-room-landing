@@ -1,10 +1,10 @@
 /**
- * DANE DO UZUPEŁNIENIA — jedno miejsce na wszystkie brakujące informacje.
+ * DANE DO UZUPEŁNIENIA - jedno miejsce na wszystkie brakujące informacje.
  *
  * Każde pole ma `value` (treść pokazywana na stronie) oraz `placeholder`
  * (tekst w nawiasie, pokazywany, gdy `value` jest `null`).
  *
- * Wszystkie wartości `value` są puste (`null`) do czasu otrzymania potwierdzonych danych —
+ * Wszystkie wartości `value` są puste (`null`) do czasu otrzymania potwierdzonych danych - 
  * na stronie widać wtedy placeholder w nawiasie kwadratowym. Nie wpisuj tu danych wymyślonych.
  */
 
@@ -103,7 +103,7 @@ export const DANE = {
     },
   ] satisfies HostData[],
 
-  /** Wewnętrzne zestawienie marek z briefu — do potwierdzenia; na stronie nie są wyświetlane. */
+  /** Wewnętrzne zestawienie marek z briefu - do potwierdzenia; na stronie nie są wyświetlane. */
   partners: [
     { name: 'ADVOSYNC', url: null },
     { name: 'MODUCTRL', url: null },

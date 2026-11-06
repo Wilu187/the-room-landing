@@ -1,4 +1,4 @@
-/* RUCH — „Wejście do pokoju”
+/* RUCH - „Wejście do pokoju”
    Jeden autorski moment (hero) i jego echo w dalszej części strony: rama rysowana od progu,
    zdjęcie otwierane przez wejście Λ z sygnetu, linie podziału dorysowywane jak ściany.
    Wszystko jednorazowe, bez pętli. Stan końcowy każdej animacji = statyczny wygląd strony,
@@ -61,7 +61,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   /* Hero gra swoje wejście od razu po załadowaniu. Gdy działa wejście z logo (html.intro-on), hero jest
-     schowane pod sceną — czeka więc w stanie początkowym, aż wjedzie na ekran (.is-in, z src/lib/intro.ts). */
+     schowane pod sceną - czeka więc w stanie początkowym, aż wjedzie na ekran (.is-in, z src/lib/intro.ts). */
   .intro-on .hero:not(.is-in) .room-plate__wall {
     transform: scale(0);
   }

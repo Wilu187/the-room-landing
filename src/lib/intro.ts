@@ -1,5 +1,5 @@
 /**
- * Wejście na stronę — sterowanie (do komponentu Intro).
+ * Wejście na stronę - sterowanie (do komponentu Intro).
  *
  * Część 1 (sama, ok. 4,7 s): ściany rysują się od progu, zamknięte skrzydło drzwi rysuje się wzdłuż progu,
  * prawe skrzydło obraca się na zawiasie (sztywna bryła, łuk otwarcia jak na rzucie), pojawia się cienka lewa
@@ -128,7 +128,7 @@ export function setupIntro(root: HTMLElement): () => void {
     big = narrow ? 1.85 : 1.9;
     lockX = (W - lockW) / 2;
     const lockY = H * 0.44 - (91 * k) / 2;
-    // kadr końcowy: ±5 jednostek w pionie i ±8 w poziomie wokół (45.3, 81) — czysto w pokoju, między skrzydłami
+    // kadr końcowy: ±5 jednostek w pionie i ±8 w poziomie wokół (45.3, 81) - czysto w pokoju, między skrzydłami
     zoomMax = Math.max(H / 10, W / 16) / k;
     text.style.setProperty('--text-top', `${lockY + 91 * k + (narrow ? 36 : 48)}px`);
   };
@@ -159,10 +159,10 @@ export function setupIntro(root: HTMLElement): () => void {
     const entered = top < H * 0.35;
     html.dataset.intro = entered ? 'done' : 'stage';
     if (themeMeta) themeMeta.content = '#F3EFE8';
-    if (top <= 0 && !playing) return; // scena całkowicie przykryta treścią — nic do rysowania
+    if (top <= 0 && !playing) return; // scena całkowicie przykryta treścią - nic do rysowania
 
     const p = reduced ? 0 : clamp(window.scrollY / dollyDistance());
-    // pokój rozjaśnia się płynnie na początku przewijania — zanim jego wnętrze wypełni ekran
+    // pokój rozjaśnia się płynnie na początku przewijania - zanim jego wnętrze wypełni ekran
     const light = reduced ? 0 : smoother(seg(p, [0.02, 0.2]));
     const qDark = easeOut(seg(t, [1050, 1700]));
     const qW = easeInOut(seg(t, T.walls));

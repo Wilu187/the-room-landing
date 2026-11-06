@@ -1,4 +1,4 @@
-# THE ROOM — landing page
+# THE ROOM - landing page
 
 Landing kameralnego kręgu adwokatów i radców prawnych. React + TypeScript + Vite, ręcznie pisany CSS, bez bibliotek animacji i UI.
 
@@ -17,7 +17,7 @@ Folder `dist/` można wgrać na dowolny hosting statyczny.
 
 ## Formularz: tryb DEMONSTRACYJNY
 
-**Formularz w tej wersji nie wysyła zgłoszeń.** Sprawdza poprawność pól i pokazuje komunikat „Formularz jest wypełniony poprawnie. To podgląd — dane nie zostały wysłane.” Nic nie trafia do sieci, localStorage ani analityki.
+**Formularz w tej wersji nie wysyła zgłoszeń.** Sprawdza poprawność pól i pokazuje komunikat „Formularz jest wypełniony poprawnie. To podgląd - dane nie zostały wysłane.” Nic nie trafia do sieci, localStorage ani analityki.
 
 Prawdziwy endpoint podłącza się w jednym miejscu: `src/config/form.ts` (lub zmienną `VITE_FORM_ENDPOINT` przy buildzie). Po jego ustawieniu formularz automatycznie:
 
@@ -51,7 +51,7 @@ Identyfikatory sekcji: `start`, `temat-roku`, `spotkania`, `krag`, `manifest`, `
 
 ## Najważniejsze decyzje
 
-- **Hero:** typografia i informacja o kręgu przed obrazem (ok. 60/40). Zdjęcie dłoni nad notatnikiem stoi w cienkiej ramie z „wejściem” u dołu — echo sygnetu THE ROOM. Rama nie jest nowym znakiem, tylko linią z gliny. Na telefonie tekst i CTA są przed zdjęciem.
+- **Hero:** typografia i informacja o kręgu przed obrazem (ok. 60/40). Zdjęcie dłoni nad notatnikiem stoi w cienkiej ramie z „wejściem” u dołu - echo sygnetu THE ROOM. Rama nie jest nowym znakiem, tylko linią z gliny. Na telefonie tekst i CTA są przed zdjęciem.
 - **Logo:** oryginalne pliki SVG bez modyfikacji (`light/` brązowe na jasnym tle, `dark/` jasne w manifeście). Wysokość 34–40 px, sprawdzona w rzeczywistej skali.
 - **Kolor:** dominuje jasna wersja; jedyną ciemną sekcją jest manifest. Glina #9A6B4F wyłącznie w ornamentach i dużych numerach 01–03, nigdy w drobnym tekście na jasnym tle. Tekst drugorzędny #625549 ma kontrast 6,3:1.
 - **Numery 01–03** występują tylko w sekcji kręgu. Manifest używa zwykłej numeracji 1–10.
@@ -65,7 +65,7 @@ Identyfikatory sekcji: `start`, `temat-roku`, `spotkania`, `krag`, `manifest`, `
 - **Stopka:** głęboki brąz #1E1915 (ciemniejszy niż manifest), jasne logo, teksty w kamiennej bieli.
 - **SEO:** `lang="pl"`, tytuł z briefu, opis i Open Graph, `noindex, nofollow`, dopóki strona zawiera placeholdery, bez danych strukturalnych.
 
-## Placeholdery — dane do uzupełnienia
+## Placeholdery - dane do uzupełnienia
 
 Wszystkie brakujące informacje są w jednym pliku: `src/content/do-uzupelnienia.ts`. Każde pole ma `value` (dziś `null`) i `placeholder` widoczny na stronie w nawiasie kwadratowym. Po wpisaniu potwierdzonej wartości komponenty same pokażą prawdziwą treść. Dane przykładowe z wcześniejszej wersji zostały usunięte zgodnie z redakcją copy.
 
@@ -81,10 +81,10 @@ Wszystkie brakujące informacje są w jednym pliku: `src/content/do-uzupelnienia
 | Stopka | [Nazwa organizatora], [E-mail kontaktowy] (po wpisaniu staje się linkiem mailto) |
 | Stopka → Nota prawna | [Dane rejestrowe i adres organizatora.], [Treść noty prawnej do uzupełnienia i zatwierdzenia.] |
 | Stopka → Prywatność | [Administrator danych i dane kontaktowe do uzupełnienia.], [Treść informacji o przetwarzaniu danych do uzupełnienia i zatwierdzenia przed uruchomieniem zgłoszeń.] |
-| Stopka → Partnerzy | [Potwierdzeni partnerzy i opis współpracy do uzupełnienia.] — lista marek z briefu (ADVOSYNC, MODUCTRL, NEUROSPACIALIST, NEUROBIOGRAPH) jest w danych, ale pokaże się dopiero razem z potwierdzonym opisem |
+| Stopka → Partnerzy | [Potwierdzeni partnerzy i opis współpracy do uzupełnienia.] - lista marek z briefu (ADVOSYNC, MODUCTRL, NEUROSPACIALIST, NEUROBIOGRAPH) jest w danych, ale pokaże się dopiero razem z potwierdzonym opisem |
 | Formularz | tryb podglądu (bez endpointu w `src/config/form.ts`) |
 
-Portretów gospodarzy celowo nie bierzemy ze zdjęć stockowych. Po wpisaniu nazwiska pojawi się monogram z inicjałami, a po dodaniu pliku i ustawieniu `portrait` — zdjęcie.
+Portretów gospodarzy celowo nie bierzemy ze zdjęć stockowych. Po wpisaniu nazwiska pojawi się monogram z inicjałami, a po dodaniu pliku i ustawieniu `portrait` - zdjęcie.
 
 Teksty robocze z briefu (manifest, FAQ, tematy) są oznaczone jako wersja robocza tam, gdzie brief tak je określa.
 
@@ -102,5 +102,5 @@ Osób ze zdjęć nie przedstawiamy jako gospodarzy ani uczestników.
 
 ## Kroje i logo
 
-- EB Garamond i Inter — SIL Open Font License (`src/assets/fonts/*-OFL.txt`).
-- Logo THE ROOM (SVG) — pliki dostarczone przez klienta, bez zmian.
+- EB Garamond i Inter - SIL Open Font License (`src/assets/fonts/*-OFL.txt`).
+- Logo THE ROOM (SVG) - pliki dostarczone przez klienta, bez zmian.

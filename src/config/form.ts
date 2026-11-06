@@ -1,5 +1,5 @@
 /**
- * KONFIGURACJA FORMULARZA — jedyny punkt podłączenia prawdziwego endpointu.
+ * KONFIGURACJA FORMULARZA - jedyny punkt podłączenia prawdziwego endpointu.
  *
  * Dopóki `endpoint` jest pusty, formularz działa w trybie podglądu:
  * sprawdza poprawność pól, niczego nie wysyła i niczego nie zapisuje.
