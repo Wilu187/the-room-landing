@@ -38,7 +38,7 @@ export const INTRO = typeset({
 
 export const HERO = typeset({
   descriptor: 'Kameralny krąg adwokatów i radców prawnych w Polsce',
-  title: 'Pokój dla tych, którzy prowadzą.',
+  title: 'O pracy prawnika. Z ludźmi, którzy ją rozumieją.',
   lead: 'Rozmawiamy o prowadzeniu kancelarii, przyszłości zawodu i tym, jak chcemy pracować. W małym gronie prawników dzielimy się doświadczeniem i uczymy się od siebie.',
   cta: 'Poproś o zaproszenie',
   secondary: 'Poznaj krąg',
