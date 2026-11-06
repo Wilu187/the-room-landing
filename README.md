@@ -57,33 +57,34 @@ Identyfikatory sekcji: `start`, `temat-roku`, `spotkania`, `krag`, `manifest`, `
 - **Numery 01–03** występują tylko w sekcji kręgu. Manifest używa zwykłej numeracji 1–10.
 - **Krąg** jest tabelą zasad dostępu, a nie pakietami: bez cen, „najpopularniejszy” i przycisku zapisu do Inner Circle.
 - **CTA spotkań** („Poproś o miejsce”, a bez potwierdzonego terminu „Zapytaj o udział”) przewijają do `#formularz`, ustawiają intencję i spotkanie, pokazują je w podsumowaniu z „Zmień” / „Usuń wybór spotkania” i nie kasują wpisanych danych. Stan „Brak miejsc” jest obsłużony w danych (`availability`), ale nieużywany.
-- **Zapowiedzi redakcyjne** są nieklikalne, oznaczone „Zapowiedź tekstu”; autorzy są na razie przykładowi (patrz niżej).
+- **Zapowiedzi redakcyjne** są nieklikalne, oznaczone „Zapowiedź tekstu”; autorzy czekają na uzupełnienie (patrz niżej).
 - **Fonty:** EB Garamond (400, 500) i Inter Variable, hostowane lokalnie, tylko zestawy latin i latin-ext (polskie znaki), `font-display: swap`, preload krojów pierwszego ekranu.
 - **Ruch** (`src/styles/motion.css`): jeden autorski moment, „wejście do pokoju” w hero. Rama z gliny rysuje się od progu, zdjęcie otwiera się przez wejście Λ z sygnetu, a wiersze tytułu wychodzą spod progu (ok. 1,4 s, raz, czysty CSS). Echo motywu: zdjęcia spotkań wchodzą tym samym wejściem, linie nad listami dorysowują się od lewej. Do tego jednorazowe wejście sekcji (12 px, 520 ms), przejścia 180 ms i rozwijanie 220 ms. Stan końcowy każdej animacji to statyczny wygląd strony, więc treść jest widoczna bez JS. Przy `prefers-reduced-motion` nie ma rysowania ani przesunięć, zostaje tylko łagodne pojawienie się zdjęcia w hero.
 - **Manifest: galeria kart** (`src/components/Manifest.tsx`, `src/lib/gallery.ts`): 10 punktów manifestu widać od razu, bez przycisku „Przeczytaj pełny manifest”. Karty w kamiennej bieli (rogi 0) jadą po łuku, w stylu „Circular Gallery” z React Bits, w nieskończonej pętli. Na karcie jest nagłówek i opis punktu, a pod kartą jego numer. Sterowanie: przeciąganie z rozpędem i dociąganiem, poziomy gest touchpada, strzałki na klawiaturze i dwa przyciski. Pionowe kółko myszy przewija stronę, a nie galerię. Karty to zwykły tekst HTML (nie WebGL), więc czytają je czytniki ekranu, a bez JS galeria jest poziomym paskiem z przewijaniem.
 - **Wejście na stronę** (`src/components/Intro.tsx`, `src/lib/intro.ts`, `src/styles/intro.css`, skrypt w `<head>` w `index.html`): na jasnym tle (kamienna biel przez cały czas) brązowa linia rysuje ściany sygnetu, wnętrze pokoju gaśnie (ciemny jest tylko kwadrat), prawe skrzydło drzwi obraca się na zawiasie i ląduje dokładnie na prawym ramieniu Λ, lewa linia (50% krycia) pojawia się na końcu, potem odsłania się „THE ROOM”, zdanie o kręgu i „Wejdź”. Przez otwarte drzwi do ciemnego pokoju wpada smuga jasnego światła. Przewijanie (albo „Wejdź”) ciepło zapala pokój (brąz → glina → kamienna biel) i przeprowadza przez drzwi do hero; przewinięcie w górę cofa scenę. Wejście jest pomijane, gdy adres prowadzi do sekcji (np. `/#formularz`), a przy `prefers-reduced-motion` logo stoi jako spokojna okładka. Nagłówek jest stały (`position: fixed`) i pojawia się dopiero po wejściu do środka. Prerenderowany HTML bez JS pokazuje zwykłą stronę.
 - **Stopka:** głęboki brąz #1E1915 (ciemniejszy niż manifest), jasne logo, teksty w kamiennej bieli.
-- **SEO:** `lang="pl"`, tytuł z briefu, opis i Open Graph, `noindex, nofollow`, dopóki strona zawiera dane przykładowe lub placeholdery, bez danych strukturalnych.
+- **SEO:** `lang="pl"`, tytuł z briefu, opis i Open Graph, `noindex, nofollow`, dopóki strona zawiera placeholdery, bez danych strukturalnych.
 
-## Dane przykładowe i placeholdery
+## Placeholdery — dane do uzupełnienia
 
-Wszystkie brakujące informacje są w jednym pliku: `src/content/do-uzupelnienia.ts`.
+Wszystkie brakujące informacje są w jednym pliku: `src/content/do-uzupelnienia.ts`. Każde pole ma `value` (dziś `null`) i `placeholder` widoczny na stronie w nawiasie kwadratowym. Po wpisaniu potwierdzonej wartości komponenty same pokażą prawdziwą treść. Dane przykładowe z wcześniejszej wersji zostały usunięte zgodnie z redakcją copy.
 
-**⚠ Strona pokazuje teraz FIKCYJNE dane przykładowe** (decyzja z 06.11.2026), żeby dobrze się czytała. Osoby, daty, miasta, adres, e-mail i teksty prawne są wymyślone. Przed publikacją każdą wartość `value` trzeba podmienić na potwierdzoną albo ustawić na `null`. Wtedy na stronie wraca placeholder w nawiasie.
+| Miejsce na stronie | Placeholder |
+|---|---|
+| Spotkania → Summit | [Miasto], [Data do potwierdzenia], [Imię i nazwisko gospodarza], [Liczba miejsc do potwierdzenia]; status „Termin w przygotowaniu”, CTA „Zapytaj o udział” (`availability: 'w-przygotowaniu'`) |
+| Spotkania → Kolacja | [Miasto], [Data i godzina do potwierdzenia], [Imię i nazwisko gospodarza], [Liczba miejsc do potwierdzenia] |
+| Gospodarze THE ROOM (2 profile) | [Inicjały], [Imię i nazwisko], [Rola w THE ROOM], [Krótka informacja o doświadczeniu zawodowym], [Autoryzowana wypowiedź o powodach tworzenia THE ROOM] |
+| Z redakcji (3 zapowiedzi) | [Autor do uzupełnienia] |
+| Wydawnictwa → Raport Stawek | [Zakres badania do potwierdzenia] (w `site.ts`) |
+| Zaproszenie → „Co dalej?”, FAQ 2 i 4 | [Sposób kontaktu i dalsze kroki do potwierdzenia przez organizatora.], [Zasady poleceń i ich znaczenie przy rozpatrywaniu próśb do potwierdzenia przez organizatora.] |
+| Pod formularzem | [Informacja o przetwarzaniu danych do uzupełnienia i zatwierdzenia przed uruchomieniem formularza.] |
+| Stopka | [Nazwa organizatora], [E-mail kontaktowy] (po wpisaniu staje się linkiem mailto) |
+| Stopka → Nota prawna | [Dane rejestrowe i adres organizatora.], [Treść noty prawnej do uzupełnienia i zatwierdzenia.] |
+| Stopka → Prywatność | [Administrator danych i dane kontaktowe do uzupełnienia.], [Treść informacji o przetwarzaniu danych do uzupełnienia i zatwierdzenia przed uruchomieniem zgłoszeń.] |
+| Stopka → Partnerzy | [Potwierdzeni partnerzy i opis współpracy do uzupełnienia.] — lista marek z briefu (ADVOSYNC, MODUCTRL, NEUROSPACIALIST, NEUROBIOGRAPH) jest w danych, ale pokaże się dopiero razem z potwierdzonym opisem |
+| Formularz | tryb podglądu (bez endpointu w `src/config/form.ts`) |
 
-| Miejsce na stronie | Dane przykładowe (teraz) | Placeholder (gdy `value: null`) |
-|---|---|---|
-| Spotkania → Summit | Warszawa, 14 maja 2027, Joanna Kordecka, 40 miejsc; „Termin potwierdzony” | [Miasto], [Data do potwierdzenia], [Imię i nazwisko gospodarza], [Liczba miejsc do potwierdzenia] |
-| Spotkania → Kolacja | Kraków, 11 marca 2027, 19:00, Tomasz Wielgosz, 12 miejsc | jw. |
-| Kto zaprasza do rozmowy | Joanna Kordecka, Tomasz Wielgosz: role, doświadczenie, dwa zdania motywacji; monogramy JK / TW zamiast portretów | [Imię i nazwisko], [Rola w THE ROOM], [Krótka informacja o doświadczeniu], [Dwa zdania…]; „Portret w przygotowaniu” |
-| Z redakcji (3 zapowiedzi) | J. Kordecka, T. Wielgosz, N. Brzeska | [Autor do uzupełnienia] |
-| Zaproszenie → „Po wysłaniu prośby”, FAQ | odpowiedź e-mailem w 14 dni; zasady poleceń | [Sposób kontaktu…], [Zasady poleceń…], [Opis rzeczywistego procesu kontaktu…] |
-| Prywatność, nota prawna, stopka | Fundacja THE ROOM, ul. Mokotowska 24/3, 00-561 Warszawa, kontakt@theroom.pl, klauzula RODO, nota prawna, opis partnerów | [Nazwa organizatora], [E-mail kontaktowy], [Dane rejestrowe…], [Treść klauzuli…], [Treść noty prawnej…], [Opis współpracy…] |
-| Wydawnictwa (`site.ts`) | Bookazine 01: „Czerwiec 2027”, Raport Stawek: „Wyniki jesienią 2027” | — (przy braku dat wróć do „W przygotowaniu” / „Planowane”) |
-| Stopka → Partnerzy | ADVOSYNC, MODUCTRL, NEUROSPACIALIST, NEUROBIOGRAPH jako zwykły tekst (`url: null`, adresów nie zgadujemy) | — |
-| Formularz | nadal tryb podglądu (bez endpointu w `src/config/form.ts`) | — |
-
-Portretów gospodarzy celowo nie wzięliśmy ze zdjęć stockowych, żeby nie przypisywać fikcyjnych nazwisk prawdziwym osobom. Po dodaniu pliku i ustawieniu `portrait` monogram zastąpi zdjęcie.
+Portretów gospodarzy celowo nie bierzemy ze zdjęć stockowych. Po wpisaniu nazwiska pojawi się monogram z inicjałami, a po dodaniu pliku i ustawieniu `portrait` — zdjęcie.
 
 Teksty robocze z briefu (manifest, FAQ, tematy) są oznaczone jako wersja robocza tam, gdzie brief tak je określa.
 

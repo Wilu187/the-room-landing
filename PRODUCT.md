@@ -20,7 +20,7 @@ THE ROOM to kameralny krąg (społeczność) adwokatów i radców prawnych, któ
 
 ## Positioning
 
-A small circle of peers, not a service, directory, training platform, software campaign or paid membership. Brand essence: suwerenność, poufność, jasność, trafny osąd, jakość ponad ilością, rozmowa wśród równych. Main line: „Pokój dla tych, którzy prowadzą." First-year theme: „Koniec godziny?" (a question, never a claim that hourly billing has ended).
+A small circle of peers, not a service, directory, training platform, software campaign or paid membership. Brand essence: suwerenność, poufność, jasność, trafny osąd, jakość ponad ilością, rozmowa wśród równych. Main line: „Pokój dla tych, którzy prowadzą." First-year theme: „Jak mierzyć wartość pracy prawnika?" (replaced „Koniec godziny?" in the copy edit of 2026-11-06; always a question, never a claim that hourly billing has ended).
 
 ## Operating Context
 
@@ -30,7 +30,7 @@ Formats: open content (Strona i Bookazine, poziom 01), Summit (poziom 02, na zap
 
 - The initiative has no confirmed history: write „tworzymy", „przygotowujemy", „pierwszy temat".
 - Not yet confirmed by the client: host names and bios, organizer name, contact e-mail, dates, cities, seat counts, referral rules, post-request contact process, funding model (no "free" claims), privacy-clause administrator, partner URLs, form endpoint.
-- Demo content (user decision, 2026-11-06): so the page reads naturally, those fields hold fictional sample values in `src/content/do-uzupelnienia.ts` (two hosts, a third article author, Summit 14 maja 2027 in Warszawa, Kolacja 11 marca 2027 in Kraków, organizer, address, e-mail, legal texts, 14-day reply, publication dates). Every value must be replaced with confirmed data, or reset to `null` to restore its placeholder, before publication; the page stays `noindex` while demo data is present. Partner URLs and the form endpoint stay empty; no host portraits from stock photos (monogram instead), so no real person is tied to a fictional identity.
+- Copy edit (client document, 2026-11-06): the earlier fictional demo values were removed; every field in `src/content/do-uzupelnienia.ts` is `null` with an exact placeholder until confirmed data arrives. Partner URLs and the form endpoint stay empty; no host portraits from stock photos. The #manifest section is protected copy: never edit its texts or mechanics as part of copy work.
 - Form runs in a clearly labelled preview mode until a real endpoint is supplied; no data leaves the browser, nothing is stored in localStorage or analytics.
 - No pricing, accounts, login, newsletter, chat, payments, cookie banner, trackers.
 - Bookazine 01 and Raport Stawek are planned, not published.
@@ -48,7 +48,7 @@ Formats: open content (Strona i Bookazine, poziom 01), Summit (poziom 02, na zap
 
 - Logo SVGs (`public/brand/`).
 - Working copy from the client's build prompt: hero, theme, meetings, circle levels, full 10-point manifesto (draft), conversation rules, FAQ answers, editorial working titles.
-- Absent and never to be fabricated (beyond the labelled demo fields above): members, testimonials, past events, statistics, research results, prices, acceptance guarantees.
+- Absent and never to be fabricated: members, testimonials, past events, statistics, research results, prices, acceptance guarantees.
 
 ## Product Principles
 

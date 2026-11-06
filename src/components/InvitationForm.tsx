@@ -139,7 +139,7 @@ export function InvitationForm() {
         <div className="error-summary" ref={summaryRef} tabIndex={-1} aria-labelledby={`${uid}-errors`}>
           <p id={`${uid}-errors`} className="error-summary__title">
             <Icon name="alert" size={18} />
-            {errorKeys.length === 1 ? FORM.errors.summaryOne : FORM.errors.summaryMany(errorKeys.length)}
+            {FORM.errors.summary}
           </p>
           <ul>
             {errorKeys.map((k) => (

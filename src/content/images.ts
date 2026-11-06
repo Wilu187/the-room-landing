@@ -28,13 +28,13 @@ export const PHOTOS = {
     width: 2400,
     height: 1600,
     widths: WIDTHS,
-    alt: 'Dłonie opartego o drewniany stół człowieka nad otwartym notatnikiem, z piórem w dłoni.',
+    alt: 'Dłonie osoby piszącej w notesie.',
     focus: { mobile: '40% 62%', desktop: '34% 60%' },
     credit: {
       author: 'Kelly Sikkema',
       authorUrl: 'https://unsplash.com/@kellysikkema',
       sourceUrl: 'https://unsplash.com/photos/a-person-sitting-at-a-table-with-a-book-and-pen-9n9La1suhjw',
-      usage: 'Hero — ilustracja skupienia i pracy z tekstem.',
+      usage: 'zdjęcie we wprowadzeniu.',
     },
   },
   summit: {
@@ -42,14 +42,14 @@ export const PHOTOS = {
     width: 2400,
     height: 1600,
     widths: WIDTHS,
-    alt: 'Kilka osób przy długim drewnianym stole w dziennym świetle; widać dłonie, notatniki i długopisy.',
+    alt: 'Grupa osób przy stole z notatnikami.',
     focus: { mobile: '38% 60%', desktop: '40% 58%' },
     credit: {
       author: 'Dylan Gillis',
       authorUrl: 'https://unsplash.com/@mainermedia',
       sourceUrl:
         'https://unsplash.com/photos/people-sitting-on-chair-in-front-of-table-while-holding-pens-during-daytime-KdeqA3aTnBY',
-      usage: 'Spotkania — ilustracja formatu Summit.',
+      usage: 'zdjęcie przy zapowiedzi Summitu.',
     },
   },
   kolacja: {
@@ -57,13 +57,13 @@ export const PHOTOS = {
     width: 2400,
     height: 1591,
     widths: WIDTHS,
-    alt: 'Widok z góry na mały drewniany stół, przy którym dwie osoby rozmawiają nad talerzami i kieliszkami.',
+    alt: 'Dwie osoby przy nakrytym stole, widok z góry.',
     focus: { mobile: '50% 48%', desktop: '50% 50%' },
     credit: {
       author: 'Ilnur Kalimullin',
       authorUrl: 'https://unsplash.com/@kalimullin',
       sourceUrl: 'https://unsplash.com/photos/people-sitting-at-the-table-eating-6UdbanxgIIw',
-      usage: 'Spotkania — ilustracja formatu Kolacja THE ROOM.',
+      usage: 'zdjęcie przy zapowiedzi kolacji.',
     },
   },
 } satisfies Record<string, Photo>;
