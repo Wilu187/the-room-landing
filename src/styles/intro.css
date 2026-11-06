@@ -1,0 +1,166 @@
+/* WEJŚCIE NA STRONĘ — komponent Intro, sterowanie w src/lib/intro.ts.
+   Włączane skryptem w <head> (html.intro-on) tylko wtedy, gdy działa JS i adres nie prowadzi
+   do konkretnej sekcji (#…). Bez tej klasy sekcji nie ma, a strona wygląda i działa jak dotąd. */
+
+.intro {
+  display: none;
+}
+
+/* 100svh sceny + 190svh przewijania: ok. 105svh przejścia przez drzwi, reszta to wjazd treści na scenę */
+.intro-on .intro {
+  display: block;
+  position: relative;
+  height: 290svh;
+}
+
+.intro__stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.intro__svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  visibility: hidden; /* do pierwszego przeliczenia układu */
+}
+
+.intro__svg.is-ready {
+  visibility: visible;
+}
+
+.intro__text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--text-top, 62%);
+  display: grid;
+  justify-items: center;
+  gap: 26px;
+  padding-inline: 24px;
+  text-align: center;
+  opacity: 0;
+}
+
+.intro__line {
+  max-width: 30ch;
+  font-size: var(--step-lead);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  text-wrap: balance;
+}
+
+.intro__enter {
+  display: inline-grid;
+  justify-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 6px 16px;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.intro__enter-label {
+  text-decoration: underline;
+  text-decoration-color: var(--clay);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.4em;
+  transition: text-decoration-color var(--t-ui) var(--ease-standard);
+}
+
+.intro__enter:hover .intro__enter-label {
+  text-decoration-color: var(--ink);
+}
+
+.intro__enter:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 6px;
+}
+
+/* Wskazówka „w dół”: cienka linia, po której przesuwa się glina. Zatrzymana, gdy tekst jest niewidoczny. */
+.intro__cue {
+  position: relative;
+  width: 1px;
+  height: 44px;
+  overflow: hidden;
+  background: rgb(46 39 33 / 0.16);
+}
+
+.intro__cue::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--clay);
+  transform: translateY(-100%);
+  animation: intro-cue 2600ms var(--ease-out) infinite;
+}
+
+.intro__text.is-still .intro__cue::after {
+  animation-play-state: paused;
+}
+
+@keyframes intro-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.intro__hint {
+  margin-top: -14px;
+  font-size: var(--step-small);
+  color: var(--ink-soft);
+}
+
+/* Treść strony wjeżdża na przypiętą scenę, gdy jesteśmy już w środku pokoju (cały <main>, żeby żadna
+   sekcja nie schowała się pod sceną, dopóki ta jest przypięta). */
+.intro-on main {
+  position: relative;
+  z-index: 2;
+  margin-top: -100svh;
+  background: var(--paper);
+}
+
+/* Nagłówek czeka, aż treść wjedzie na ekran */
+.intro-on .site-header {
+  transition:
+    opacity 420ms var(--ease-out),
+    transform 420ms var(--ease-out),
+    visibility 0s,
+    border-color var(--t-ui) var(--ease-standard),
+    background-color var(--t-ui) var(--ease-standard);
+}
+
+.intro-on[data-intro='stage'] .site-header {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 300ms var(--ease-standard),
+    transform 300ms var(--ease-standard),
+    visibility 0s linear 300ms;
+}
+
+/* Ograniczony ruch: logo jako spokojna okładka (bez rysowania i przejścia), potem zwykłe przewijanie */
+.intro-on.intro-rm .intro {
+  height: 100svh;
+}
+
+.intro-on.intro-rm main {
+  margin-top: 0;
+}

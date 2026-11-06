@@ -1,0 +1,181 @@
+/* RUCH — „Wejście do pokoju”
+   Jeden autorski moment (hero) i jego echo w dalszej części strony: rama rysowana od progu,
+   zdjęcie otwierane przez wejście Λ z sygnetu, linie podziału dorysowywane jak ściany.
+   Wszystko jednorazowe, bez pętli. Stan końcowy każdej animacji = statyczny wygląd strony,
+   więc bez CSS-owych animacji (lub przy ich błędzie) treść jest zawsze widoczna. */
+
+@keyframes room-wall-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes room-wall-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+/* Wejście Λ: wąski trójkąt u progu → szczyt unosi się szybciej niż ściany → pełny kadr.
+   Krzywe na odcinkach (najpierw przyspieszenie, potem długie wyhamowanie) dają jeden płynny ruch. */
+@keyframes room-doorway {
+  0% {
+    clip-path: polygon(45% 100%, 50% 82%, 50% 82%, 50% 82%, 55% 100%);
+    animation-timing-function: cubic-bezier(0.45, 0, 0.9, 0.55);
+  }
+
+  40% {
+    clip-path: polygon(29% 100%, 35% 44%, 50% 26%, 65% 44%, 71% 100%);
+    animation-timing-function: cubic-bezier(0.15, 0.6, 0.35, 1);
+  }
+
+  100% {
+    clip-path: polygon(0% 100%, 0% 0%, 50% 0%, 100% 0%, 100% 100%);
+  }
+}
+
+@keyframes room-settle {
+  from {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes line-rise {
+  from {
+    transform: translateY(calc(100% + 0.24em));
+  }
+}
+
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes soft-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero gra swoje wejście od razu po załadowaniu. Gdy działa wejście z logo (html.intro-on), hero jest
+     schowane pod sceną — czeka więc w stanie początkowym, aż wjedzie na ekran (.is-in, z src/lib/intro.ts). */
+  .intro-on .hero:not(.is-in) .room-plate__wall {
+    transform: scale(0);
+  }
+
+  .intro-on .hero:not(.is-in) .room-plate__frame {
+    clip-path: polygon(45% 100%, 50% 82%, 50% 82%, 50% 82%, 55% 100%);
+  }
+
+  .intro-on .hero:not(.is-in) :is(.room-plate__caption, .hero__descriptor, .hero__lead, .hero__actions, .hero__note) {
+    opacity: 0;
+  }
+
+  .intro-on .hero:not(.is-in) .hero__line-inner {
+    transform: translateY(calc(100% + 0.24em));
+  }
+
+  /* 1. Rama rysuje się jedną linią: od progu do narożników, w górę ścian, do środka sufitu */
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .room-plate__wall {
+    animation: room-wall-x 260ms cubic-bezier(0.5, 0, 1, 1) 120ms backwards;
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) :is(.room-plate__wall--l, .room-plate__wall--r) {
+    animation: room-wall-y 420ms linear 380ms backwards;
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) :is(.room-plate__wall--tl, .room-plate__wall--tr) {
+    animation: room-wall-x 440ms var(--ease-out) 800ms backwards;
+  }
+
+  /* 2. Zdjęcie otwiera się przez wejście i lekko osiada, jak wzrok po przekroczeniu progu */
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .room-plate__frame {
+    animation: room-doorway 1150ms linear 280ms backwards;
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .room-plate__img img {
+    animation: room-settle 1700ms var(--ease-out) 280ms backwards;
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .room-plate__caption {
+    animation: soft-fade 600ms var(--ease-out) 1100ms backwards;
+  }
+
+  /* 3. Tekst: linia etykiety, dwa wiersze tytułu spod progu, potem reszta (całość < 1,5 s) */
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .hero__descriptor {
+    animation: soft-fade 700ms var(--ease-out) 120ms backwards;
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .hero__descriptor::before {
+    transform-origin: left center;
+    animation: room-wall-x 700ms var(--ease-out) 60ms backwards;
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .hero__line-inner {
+    animation: line-rise 1000ms var(--ease-out) backwards;
+    animation-delay: calc(200ms + var(--i, 0) * 130ms);
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .hero__lead {
+    animation: soft-rise 800ms var(--ease-out) 480ms backwards;
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .hero__actions {
+    animation: soft-rise 800ms var(--ease-out) 580ms backwards;
+  }
+
+  :is(:root:not(.intro-on) .hero, .hero.is-in) .hero__note {
+    animation: soft-rise 800ms var(--ease-out) 680ms backwards;
+  }
+
+  /* Na wąskich ekranach rama stoi pod tekstem, zwykle poniżej krawędzi okna.
+     Wejście czeka wtedy, aż zdjęcie pojawi się na ekranie (bez JS gra od razu, jak na desktopie). */
+  @media (max-width: 899px) {
+    .reveal-on .hero__plate[data-reveal]:not(.is-revealed)
+      :is(.room-plate__wall, .room-plate__frame, .room-plate__img img, .room-plate__caption) {
+      animation-play-state: paused;
+    }
+  }
+
+  /* 4. Echo: zdjęcia spotkań wchodzą tym samym wejściem, gdy karta pojawia się na ekranie */
+  .reveal-on .meeting[data-reveal]:not(.is-revealed) .meeting__photo img {
+    clip-path: polygon(45% 100%, 50% 82%, 50% 82%, 50% 82%, 55% 100%);
+  }
+
+  .reveal-on .meeting[data-reveal].is-revealed .meeting__photo img {
+    animation: room-doorway 1000ms linear backwards;
+    animation-delay: calc(120ms + var(--i, 0) * 120ms);
+  }
+
+  /* 5. Linie nad listami dorysowują się od lewej, element po elemencie, razem z wejściem treści */
+  .reveal-on :is(.theme__item, .level, .pillar, .article, .host, .thesis)[data-reveal] {
+    --rule: var(--line-strong);
+    border-top-color: transparent;
+    background: linear-gradient(var(--rule), var(--rule)) left top / 100% 1px no-repeat border-box;
+    transition:
+      opacity var(--t-reveal) var(--ease-out),
+      transform var(--t-reveal) var(--ease-out),
+      background-size 1100ms var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 70ms);
+  }
+
+  .reveal-on .thesis[data-reveal] {
+    --rule: var(--line-dark);
+  }
+
+  .reveal-on :is(.theme__item, .level, .pillar, .article, .host, .thesis)[data-reveal]:not(.is-revealed) {
+    background-size: 0% 1px;
+  }
+}
+
+/* Ograniczenie ruchu: bez rysowania, otwierania i przesunięć.
+   Zostaje tylko łagodne pojawienie się zdjęcia w hero (sama przezroczystość).
+   Selektor jest bardziej szczegółowy niż globalne `*` z base.css, więc wygrywa mimo !important. */
+@media (prefers-reduced-motion: reduce) {
+  .hero__plate .room-plate__frame {
+    animation: soft-fade 480ms ease-out backwards !important;
+  }
+}

@@ -1,0 +1,79 @@
+/* THE ROOM — tokeny koloru, typografii, odstępów i ruchu */
+
+:root {
+  /* Kolor (paleta z promptu i księgi logo) */
+  --paper: #f3efe8; /* kamienna biel — tło główne */
+  --ink: #2e2721; /* głęboki brąz — tekst, nagłówki, główne przyciski */
+  --surface: #e4ddd2; /* powierzchnie pomocnicze */
+  --clay: #9a6b4f; /* glina — wyłącznie detale dekoracyjne i duże numery */
+
+  --ink-soft: #625549; /* tekst drugorzędny: 6.3:1 na paper, 5.3:1 na surface */
+  --ink-hover: #47392f; /* hover głównego przycisku */
+  --line: rgb(46 39 33 / 0.16); /* cienkie linie podziału (dekoracyjne) */
+  --line-strong: #857769; /* obrysy kontrolek: ≥3:1 na paper, surface i field */
+  --field: #fbf9f5; /* tło pól formularza */
+  --error: #8a2d1e;
+  --selection: #dcc6b6;
+
+  /* Ciemna sekcja (manifest) */
+  --paper-soft: #cfc5b8; /* tekst drugorzędny na ink: 8.6:1 */
+  --clay-light: #c49a7e; /* ornament na ink */
+  --line-dark: rgb(243 239 232 / 0.22);
+  --ink-deep: #1e1915; /* stopka: głębszy brąz niż manifest */
+
+  /* Typografia */
+  --font-serif: 'EB Garamond', 'EB Garamond Fallback', Garamond, 'Times New Roman', serif;
+  --font-sans: 'Inter Variable', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --step-small: 0.875rem; /* 14 px — opisy pomocnicze */
+  --step-ui: 0.9375rem; /* 15 px — nawigacja, etykiety */
+  --step-body: clamp(1.0625rem, 1.02rem + 0.18vw, 1.125rem); /* 17 → 18 px */
+  --step-lead: clamp(1.125rem, 1.06rem + 0.3vw, 1.25rem); /* 18 → 20 px */
+  --step-h4: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem); /* 20 → 24 px */
+  --step-h3: clamp(1.5rem, 1.32rem + 0.7vw, 1.875rem); /* 24 → 30 px */
+  --step-h2: clamp(1.875rem, 1.35rem + 2vw, 3rem); /* 30 → 48 px */
+  --step-h1: clamp(2.5rem, 1.6rem + 3.5vw, 4.5rem); /* 40 → 72 px */
+  --step-display: clamp(3rem, 1.6rem + 5.6vw, 6rem); /* „Koniec godziny?” */
+
+  --leading-body: 1.65;
+  --leading-tight: 1.08;
+  --measure: 64ch;
+
+  /* Układ */
+  --container: 1240px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --col-gap: clamp(20px, 2.4vw, 32px);
+  --section-y: clamp(56px, 2.5rem + 4.5vw, 112px);
+  --header-h: 64px;
+  --radius: 3px;
+
+  /* Ruch */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --t-ui: 180ms;
+  --t-disclose: 220ms;
+  --t-reveal: 520ms;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --header-h: 76px;
+  }
+}
+
+/* Zamienniki metryczne ograniczające skok układu podczas ładowania krojów */
+@font-face {
+  font-family: 'EB Garamond Fallback';
+  src: local('Times New Roman'), local('Times'), local('Liberation Serif');
+  size-adjust: 92%;
+  ascent-override: 98%;
+  descent-override: 30%;
+}
+
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+}

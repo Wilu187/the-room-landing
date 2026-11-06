@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T09:15:00.571Z",
+  "title": "Design System: THE ROOM",
+  "extensions": {
+    "colorMeta": {
+      "stone-paper": {
+        "role": "neutral",
+        "displayName": "Stone Paper",
+        "canonical": "oklch(95.3% 0.010 81.8)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#282623",
+          "#474540",
+          "#696660",
+          "#8c8983",
+          "#b0ada8",
+          "#d3d1cc",
+          "#f0eeea"
+        ]
+      },
+      "deep-umber": {
+        "role": "primary",
+        "displayName": "Deep Umber",
+        "canonical": "oklch(27.8% 0.015 62.8)",
+        "tonalRamp": [
+          "#0e0a08",
+          "#2a2521",
+          "#4a443e",
+          "#6c645e",
+          "#8f8881",
+          "#b4aca7",
+          "#d6d0ca",
+          "#f3ede9"
+        ]
+      },
+      "linen-surface": {
+        "role": "neutral",
+        "displayName": "Linen Surface",
+        "canonical": "oklch(90.0% 0.017 79.3)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#292620",
+          "#49443d",
+          "#6b655c",
+          "#8e887f",
+          "#b2ada5",
+          "#d5d0c9",
+          "#f2eee8"
+        ]
+      },
+      "clay": {
+        "role": "secondary",
+        "displayName": "Clay",
+        "canonical": "oklch(57.0% 0.073 51.6)",
+        "tonalRamp": [
+          "#180600",
+          "#3a1f0d",
+          "#5f3b26",
+          "#865a40",
+          "#aa7e64",
+          "#cca48e",
+          "#ecc9b5",
+          "#ffe8d6"
+        ]
+      },
+      "umber-soft": {
+        "role": "neutral",
+        "displayName": "Umber Soft",
+        "canonical": "oklch(45.9% 0.026 64.8)",
+        "tonalRamp": [
+          "#0f0a06",
+          "#2d251d",
+          "#4d4339",
+          "#706358",
+          "#93877b",
+          "#b7aca1",
+          "#d9cfc6",
+          "#f6ede5"
+        ]
+      },
+      "umber-hover": {
+        "role": "primary",
+        "displayName": "Umber Hover",
+        "canonical": "oklch(35.7% 0.026 57.3)",
+        "tonalRamp": [
+          "#100a06",
+          "#2d241e",
+          "#4e423a",
+          "#726358",
+          "#95867b",
+          "#b8aba2",
+          "#dacec6",
+          "#f6ece5"
+        ]
+      },
+      "control-stroke": {
+        "role": "neutral",
+        "displayName": "Control Stroke",
+        "canonical": "oklch(57.8% 0.027 67.2)",
+        "tonalRamp": [
+          "#100a05",
+          "#2d251d",
+          "#4d4338",
+          "#706457",
+          "#94877a",
+          "#b7aca0",
+          "#d9cfc5",
+          "#f6ede4"
+        ]
+      },
+      "field-white": {
+        "role": "neutral",
+        "displayName": "Field White",
+        "canonical": "oklch(98.3% 0.006 84.6)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272624",
+          "#464542",
+          "#676663",
+          "#8a8986",
+          "#afaeab",
+          "#d2d1ce",
+          "#efeeec"
+        ]
+      },
+      "brick-error": {
+        "role": "error",
+        "displayName": "Brick Error",
+        "canonical": "oklch(43.4% 0.130 31.7)",
+        "tonalRamp": [
+          "#220000",
+          "#490e06",
+          "#732a1d",
+          "#a14636",
+          "#c66c5b",
+          "#e79686",
+          "#ffbdae",
+          "#ffddd1"
+        ]
+      },
+      "paper-soft": {
+        "role": "neutral",
+        "displayName": "Paper Soft (on dark)",
+        "canonical": "oklch(82.8% 0.021 74.6)",
+        "tonalRamp": [
+          "#0e0a06",
+          "#2b261f",
+          "#4b443b",
+          "#6d655a",
+          "#90887d",
+          "#b4ada3",
+          "#d6d0c7",
+          "#f3ede6"
+        ]
+      },
+      "clay-light": {
+        "role": "secondary",
+        "displayName": "Clay Light (on dark)",
+        "canonical": "oklch(71.8% 0.064 55.2)",
+        "tonalRamp": [
+          "#160700",
+          "#372010",
+          "#5b3d29",
+          "#825d44",
+          "#a58067",
+          "#c8a690",
+          "#e8cab7",
+          "#ffe9d8"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgb(46 39 33 / 0.16)"
+      },
+      "hairline-dark": {
+        "role": "neutral",
+        "displayName": "Hairline Dark",
+        "canonical": "rgb(243 239 232 / 0.22)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Jedno pytanie roku („Koniec godziny?”); jedyny szczyt skali."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "H1 hero."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Tytuły sekcji."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Nazwy formatów i poziomów, tezy manifestu."
+      },
+      "item": {
+        "displayName": "Item",
+        "purpose": "Pytania, filary, zapowiedzi, punkty manifestu."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Leady hero i sekcji."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Tekst ciągły."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nagłówki grup i etykiety pól, pisane zdaniem."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Tagi statusów, podpisy, opisy pomocnicze (min. 14 px)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "menu-drop",
+        "value": "0 18px 32px -24px rgb(46 39 33 / 0.35)",
+        "purpose": "Wyłącznie rozwinięte menu mobilne."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Jednorazowe wejścia sekcji (12 px, 520 ms, odstęp 70 ms)."
+      },
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.2, 0, 0, 1)",
+        "purpose": "Zmiany stanu i rozwijanie."
+      },
+      {
+        "name": "t-ui",
+        "value": "180ms",
+        "purpose": "Kolor, obrys, podkreślenie."
+      },
+      {
+        "name": "t-disclose",
+        "value": "220ms",
+        "purpose": "FAQ, stopka, pełny manifest."
+      },
+      {
+        "name": "t-reveal",
+        "value": "520ms",
+        "purpose": "Wejście sekcji przy przewijaniu."
+      },
+      {
+        "name": "room-walls",
+        "value": "260ms / 420ms / 440ms",
+        "purpose": "Wejście do pokoju: rama rysowana od progu (progi, ściany, sufit)."
+      },
+      {
+        "name": "room-doorway",
+        "value": "clip-path Λ → pełny kadr, 1150ms",
+        "purpose": "Otwieranie zdjęcia w hero; 1000ms przy zdjęciach spotkań."
+      },
+      {
+        "name": "line-rise",
+        "value": "1000ms, odstęp 130ms",
+        "purpose": "Dwa wiersze tytułu hero wychodzące spod progu (maska)."
+      },
+      {
+        "name": "rule-draw",
+        "value": "1100ms",
+        "purpose": "Linie nad listami dorysowywane od lewej przy wejściu treści."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "560px"
+      },
+      {
+        "name": "md",
+        "value": "760px"
+      },
+      {
+        "name": "lg",
+        "value": "900px"
+      },
+      {
+        "name": "split",
+        "value": "960px"
+      },
+      {
+        "name": "xl",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Główne działanie: „Poproś o zaproszenie”.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#formularz\">Poproś o zaproszenie</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; min-height: 50px; padding: 12px 26px; border-radius: 3px; background: #2e2721; color: #f3efe8; font: 500 16px/1.2 'Inter Variable', system-ui, sans-serif; text-decoration: none; transition: background-color 180ms cubic-bezier(0.2,0,0,1); } .ds-btn-primary:hover { background: #47392f; } .ds-btn-primary:focus-visible { outline: 2px solid #2e2721; outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Działanie drugorzędne w module, np. „Zapytaj o udział”.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#formularz\">Zapytaj o udział <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M4 12h15M13.5 6.5 19 12l-5.5 5.5\"/></svg></a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 18px; border: 1px solid #2e2721; border-radius: 3px; color: #2e2721; font: 500 15px/1.2 'Inter Variable', system-ui, sans-serif; text-decoration: none; transition: background-color 180ms cubic-bezier(0.2,0,0,1); } .ds-btn-outline:hover { background: #e4ddd2; } .ds-btn-outline svg { transition: transform 180ms; } .ds-btn-outline:hover svg { transform: translateX(3px); } .ds-btn-outline:focus-visible { outline: 2px solid #2e2721; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Link drugorzędny, np. „Poznaj krąg”.",
+      "html": "<a class=\"ds-link\" href=\"#krag\">Poznaj krąg <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M4 12h15M13.5 6.5 19 12l-5.5 5.5\"/></svg></a>",
+      "css": ".ds-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #2e2721; font: 500 17px/1.4 'Inter Variable', system-ui, sans-serif; text-decoration: underline; text-decoration-color: #857769; text-underline-offset: 0.3em; transition: text-decoration-color 180ms; } .ds-link:hover { text-decoration-color: currentColor; } .ds-link:focus-visible { outline: 2px solid #2e2721; outline-offset: 3px; }"
+    },
+    {
+      "name": "Status Tag",
+      "kind": "chip",
+      "refersTo": "status-tag",
+      "description": "Status materiału lub terminu, zawsze słowami.",
+      "html": "<span class=\"ds-tag\">Temat w przygotowaniu</span>",
+      "css": ".ds-tag { display: inline-flex; padding: 3px 10px; border: 1px solid #857769; border-radius: 2px; color: #625549; font: 500 14px/1.45 'Inter Variable', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Pole formularza z trwałą etykietą i opisem pomocniczym.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Kancelaria</span><span class=\"ds-field__help\">Jeśli kancelaria dopiero powstaje, wpisz „w trakcie tworzenia”.</span><input class=\"ds-input\" type=\"text\" /></label>",
+      "css": ".ds-field { display: grid; gap: 6px; font-family: 'Inter Variable', system-ui, sans-serif; color: #2e2721; } .ds-field__label { font-weight: 600; font-size: 16px; } .ds-field__help { font-size: 14px; color: #625549; } .ds-input { min-height: 50px; padding: 12px 14px; border: 1px solid #857769; border-radius: 3px; background: #fbf9f5; color: #2e2721; font-size: 17px; caret-color: #9a6b4f; transition: border-color 180ms; } .ds-input:hover { border-color: #2e2721; } .ds-input:focus-visible { outline: 2px solid #2e2721; outline-offset: 2px; border-color: #2e2721; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Niski, przyklejony nagłówek z linkami do sekcji.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav__link\" href=\"#krag\">Krąg</a><a class=\"ds-nav__link\" href=\"#spotkania\">Spotkania</a><a class=\"ds-nav__link\" href=\"#manifest\">Manifest</a><a class=\"ds-nav__link\" href=\"#redakcja\">Artykuły</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 20px; background: #f3efe8; padding: 0 8px; border-bottom: 1px solid rgb(46 39 33 / 0.16); } .ds-nav__link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 6px; color: #2e2721; font: 500 15px/1 'Inter Variable', system-ui, sans-serif; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.45em; transition: text-decoration-color 180ms; } .ds-nav__link:hover { text-decoration-color: #9a6b4f; } .ds-nav__link:focus-visible { outline: 2px solid #2e2721; outline-offset: 3px; }"
+    },
+    {
+      "name": "Room Frame Plate",
+      "kind": "custom",
+      "refersTo": "room-frame",
+      "description": "Wiodące zdjęcie w ramie z gliny z wejściem u dołu i podpisem w wejściu.",
+      "html": "<figure class=\"ds-plate\"><div class=\"ds-plate__img\"></div><figcaption class=\"ds-plate__cap\">Zdjęcie ilustracyjne</figcaption></figure>",
+      "css": ".ds-plate { position: relative; margin: 14px 14px 26px; width: 220px; } .ds-plate::before { content: \"\"; position: absolute; inset: -14px; border: 1px solid #9a6b4f; border-bottom: 0; background: linear-gradient(#9a6b4f,#9a6b4f) left bottom / 21% 1px no-repeat, linear-gradient(#9a6b4f,#9a6b4f) right bottom / 21% 1px no-repeat; } .ds-plate__img { aspect-ratio: 4 / 5; background: #e4ddd2; } .ds-plate__cap { position: absolute; left: 50%; bottom: -14px; transform: translate(-50%, 50%); padding: 0 10px; font: 500 14px/1.4 'Inter Variable', system-ui, sans-serif; color: #625549; white-space: nowrap; }"
+    },
+    {
+      "name": "Ruled Level Row",
+      "kind": "custom",
+      "refersTo": "level-row",
+      "description": "Wiersz poziomu kręgu: numer w glinie, nazwa, zasada dostępu.",
+      "html": "<div class=\"ds-level\"><span class=\"ds-level__num\">02</span><span class=\"ds-level__name\">Summit</span><span class=\"ds-level__txt\">Na zaproszenie lub zgłoszenie.</span></div>",
+      "css": ".ds-level { display: grid; grid-template-columns: 64px 1fr 1.4fr; gap: 20px; align-items: start; padding: 28px 0; border-top: 1px solid #857769; color: #2e2721; } .ds-level__num { font: 400 32px/1 'EB Garamond', Garamond, serif; color: #9a6b4f; } .ds-level__name { font: 500 26px/1.1 'EB Garamond', Garamond, serif; } .ds-level__txt { font: 400 17px/1.6 'Inter Variable', system-ui, sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Carefully Set Quarterly",
+    "overview": "THE ROOM wygląda jak starannie wydawana publikacja o przyszłości zawodu prawnika, a nie jak strona produktu. Jakość wynika z kompozycji, proporcji, typografii i precyzji detalu, nie z efektów. Kamienny, ciepły papier to podłoże. Głęboki brąz pełni rolę farby drukarskiej. Glina pojawia się tylko jako ornament. Całość jest jasna, z jedną ciemną rozkładówką, i spokojna, z dużą ilością powietrza, ale bez pustych ekranów.\n\nTreść prowadzi, obraz jej służy. Fotografie są ilustracyjnymi tablicami podporządkowanymi tekstowi (ok. 40% szerokości w hero) i zawsze noszą podpis „Zdjęcie ilustracyjne”. Struktura opiera się na cienkich liniach podziału i asymetrycznej siatce redakcyjnej, nie na kartach. Ruch jest jednorazowy i cichy: jedyny autorski moment to „wejście do pokoju” w hero, a reszta strony ma się ułożyć, nie wystąpić.\n\nOdrzucone przez klienta: złote gradienty, glassmorphism, neony, wielkie cienie, ozdobne ikony w każdym bloku, identyczne karty, symbole wagi, młotka, paragrafu i kolumn sądowych.",
+    "keyCharacteristics": [
+      "Jasny, ciepły papier (#f3efe8) z jedną ciemną sekcją (manifest).",
+      "Prosta, duża EB Garamond w nagłówkach, Inter w tekście i interfejsie.",
+      "Cienkie linie podziału 1px zamiast ramek i kart.",
+      "Glina wyłącznie w ornamentach: kreski, romby, rama „pokoju”, duże numery 01–03.",
+      "Uczciwe placeholdery i statusy pisane tekstem, nie kolorem."
+    ],
+    "rules": [
+      {
+        "name": "The Clay Is Ornament Rule",
+        "body": "Glina nigdy nie niesie drobnego tekstu na jasnym tle. Wolno jej rysować linie, romby, ramę i numery od 28 px wzwyż.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Dark Spread Rule",
+        "body": "Na stronie jest tylko jedna sekcja na ciemnym tle. Pozostałe sekcje różnią się kompozycją, nie kolorem tła.",
+        "section": "colors"
+      },
+      {
+        "name": "The Upright Garamond Rule",
+        "body": "Nagłówki są proste: bez kursywy, bez wersalików, z lekkim ściśnięciem (−0.012 do −0.022em) tylko w dużych stopniach.",
+        "section": "typography"
+      },
+      {
+        "name": "The Polish Setting Rule",
+        "body": "Jednoliterowe spójniki i „THE ROOM” są wiązane twardą spacją (`typeset()`), więc żadne „w”, „i” ani „z” nie zostaje na końcu wiersza.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "Karty, przyciski i zdjęcia nie mają cieni. Stan pokazuje się kolorem, obrysem albo podkreśleniem.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Room Frame Rule",
+        "body": "Wiodącą fotografię obejmuje cienka rama z gliny, odsunięta o 14 px, z „wejściem” u dołu: dolna krawędź ma tylko po 21% szerokości z każdej strony, jak w sygnecie. Podpis „Zdjęcie ilustracyjne” stoi w tym wejściu. Rama nie jest nowym znakiem i w stanie spoczynku nie zawiera litery Λ; Λ pojawia się wyłącznie jako przejściowy kształt otwierania zdjęcia (patrz Motion), a sygnet zawsze zostaje nietknięty. Używa się jej oszczędnie, raz na widok. Bez portretu ten sam motyw, mniejszy i w 55% krycia, obejmuje monogram gospodarza.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do trzymać jasny papier (#f3efe8) jako podłoże i brąz (#2e2721) jako jedyny kolor tekstu i głównych przycisków.",
+      "Do używać gliny (#9a6b4f) tylko w ornamentach i liczbach od 28 px.",
+      "Do budować sekcje z linii 1 px i asymetrycznych kolumn, z większym odstępem nad nagłówkiem niż pod nim.",
+      "Do zapisywać każdy status słowami i oznaczać fotografie podpisem „Zdjęcie ilustracyjne”.",
+      "Do utrzymywać cele dotykowe ≥44 px, kontrast tekstu ≥4,5:1 i widoczny fokus 2 px."
+    ],
+    "donts": [
+      "Don't stosować złotych gradientów, glassmorphismu, neonów, wielkich cieni ani ozdobnych ikon w każdym bloku.",
+      "Don't budować strony z identycznych kart ani stylizować nieklikalnych zapowiedzi jak linków.",
+      "Don't używać numeracji 01 / 02 / 03 poza poziomami kręgu.",
+      "Don't dodawać symboli wagi, młotka, paragrafu ani kolumn sądowych.",
+      "Don't zmieniać kolejnych sekcji w osobne kolorowe plansze. Ciemna jest tylko jedna."
+    ]
+  }
+}
