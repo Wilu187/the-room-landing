@@ -1025,6 +1025,14 @@
   color: var(--ink-soft);
 }
 
+/* Placeholder „[Inicjały]” w ramce monogramu, dopóki nie ma potwierdzonego nazwiska */
+.host .host__monogram--placeholder {
+  font-family: var(--font-sans);
+  font-size: var(--step-small);
+  letter-spacing: 0;
+  text-align: center;
+}
+
 .host__name {
   font-size: var(--step-h4);
   font-weight: 500;
@@ -1245,6 +1253,12 @@
   margin-top: 36px;
   padding-top: 20px;
   border-top: 1px solid var(--line);
+}
+
+.invitation__demo-note {
+  margin-top: 8px;
+  font-size: var(--step-ui);
+  color: var(--ink-soft);
 }
 
 .invitation__process .minor-heading {

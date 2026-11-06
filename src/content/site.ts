@@ -8,9 +8,9 @@ import { typeset } from '../lib/typography';
 export type Intent = 'krag' | 'summit' | 'kolacja';
 
 export const INTENTS: { id: Intent; label: string; hint: string }[] = typeset([
-  { id: 'krag', label: 'Krąg THE ROOM', hint: 'Treści, rozmowy i zaproszenia do kręgu' },
-  { id: 'summit', label: 'Summit', hint: 'Dla partnerów i doświadczonych prawników' },
-  { id: 'kolacja', label: 'Kolacja', hint: 'Kameralne spotkanie wokół wspólnego tematu' },
+  { id: 'krag', label: 'Krąg THE ROOM', hint: 'Chcę dowiedzieć się więcej o możliwościach udziału w THE ROOM.' },
+  { id: 'summit', label: 'Summit', hint: 'Spotkanie dla partnerów i doświadczonych prawników.' },
+  { id: 'kolacja', label: 'Kolacja', hint: 'Rozmowa przy wspólnym stole, w małym gronie.' },
 ] as const satisfies { id: Intent; label: string; hint: string }[]);
 
 export const NAV = typeset({
@@ -18,12 +18,12 @@ export const NAV = typeset({
     { href: '#krag', label: 'Krąg' },
     { href: '#spotkania', label: 'Spotkania' },
     { href: '#manifest', label: 'Manifest' },
-    { href: '#redakcja', label: 'Artykuły' },
+    { href: '#redakcja', label: 'Z redakcji' },
   ],
   cta: 'Poproś o zaproszenie',
   skip: 'Przejdź do treści',
   menuOpen: 'Menu',
-  menuClose: 'Zamknij',
+  menuClose: 'Zamknij menu',
   logoLabel: 'THE ROOM — początek strony',
 });
 
@@ -33,29 +33,29 @@ export const INTRO = typeset({
   mark: 'THE ROOM',
   line: 'Kameralny krąg adwokatów i radców prawnych w Polsce',
   enter: 'Wejdź',
-  hint: 'albo przewiń',
+  hint: 'albo przewiń w dół',
 });
 
 export const HERO = typeset({
   descriptor: 'Kameralny krąg adwokatów i radców prawnych w Polsce',
   title: 'Pokój dla tych, którzy prowadzą.',
-  lead: 'Rozmowy o prowadzeniu kancelarii, przyszłości zawodu i świadomym sposobie pracy. W gronie prawników, których łączy wspólny standard.',
+  lead: 'Rozmawiamy o prowadzeniu kancelarii, przyszłości zawodu i tym, jak chcemy pracować. W małym gronie prawników dzielimy się doświadczeniem i uczymy się od siebie.',
   cta: 'Poproś o zaproszenie',
   secondary: 'Poznaj krąg',
   themeNoteLabel: 'Temat pierwszego roku:',
-  themeNote: 'Koniec godziny?',
+  themeNote: 'Jak mierzyć wartość pracy prawnika?',
   photoCaption: 'Zdjęcie ilustracyjne',
 });
 
 export const THEME = typeset({
   label: 'Temat pierwszego roku',
-  title: 'Koniec godziny?',
-  body: 'Przyszłość kancelarii zaczyna się od pytań, które zadajemy dziś. Pierwszy rok THE ROOM poświęcamy wartości pracy prawnika — temu, jak ją tworzymy, jak ją oceniamy i jak wpływa na nią sposób, w jaki pracujemy.',
-  questionsTitle: 'Pytania, które proponujemy do rozmowy',
+  title: 'Jak mierzyć wartość pracy prawnika?',
+  body: 'Liczba godzin pokazuje, ile czasu poświęcamy sprawie. Nie mówi jednak wszystkiego o jakości decyzji, odpowiedzialności ani wartości naszej pracy dla klienta. Pierwszy rok THE ROOM poświęcamy temu, jak tę wartość oceniać i wyceniać — oraz jak zmieniają ją technologia i organizacja pracy.',
+  questionsTitle: 'Od tych pytań zaczynamy',
   questions: [
-    'Jak oceniać wartość pracy prawnika, gdy sama liczba godzin nie opisuje jej jakości?',
-    'Co AI zmienia w organizacji kancelarii i roli prawniczego osądu?',
-    'Jak prowadzić zespół bez opierania jego pracy na ciągłej dostępności?',
+    'Co poza czasem pracy powinno decydować o wynagrodzeniu prawnika?',
+    'Jak korzystać z AI, zachowując kontrolę nad jakością pracy?',
+    'Jak organizować pracę zespołu, żeby nie wymagała ciągłej dostępności?',
   ],
 });
 
@@ -69,25 +69,25 @@ export type MeetingCopy = {
 };
 
 export const MEETINGS = typeset({
-  title: 'Spotkania, które dają przestrzeń do rozmowy.',
+  title: 'Czas na rozmowę z innymi prawnikami',
   intro:
-    'Summity i kolacje tworzą miejsce na pytania o prowadzenie kancelarii, przyszłość zawodu i własny sposób pracy.',
+    'Summity i kolacje THE ROOM to okazja do wymiany doświadczeń z osobami, które mierzą się z podobnymi wyzwaniami zawodowymi.',
   items: [
     {
       id: 'summit-01',
       intent: 'summit',
       format: 'Summit',
-      topic: 'Koniec godziny? Wartość pracy prawnika.',
+      topic: 'Jak mierzyć wartość pracy prawnika?',
       topicStatus: 'Temat pierwszego roku',
-      description: 'Spotkanie dla partnerów i doświadczonych prawników, którzy kształtują lub zakładają kancelarię.',
+      description: 'Spotkanie dla partnerów i doświadczonych prawników, którzy odpowiadają za rozwój kancelarii lub zakładają własną.',
     },
     {
       id: 'kolacja-01',
       intent: 'kolacja',
       format: 'Kolacja THE ROOM',
-      topic: 'O prowadzeniu kancelarii i własnym sposobie pracy.',
+      topic: 'Jak chcemy prowadzić kancelarię?',
       topicStatus: 'Temat wieczoru',
-      description: 'Kameralne spotkanie wokół wspólnego tematu, z przestrzenią na spokojną rozmowę.',
+      description: 'Kameralna rozmowa o codziennej pracy prawnika — przy wspólnym stole, bez pośpiechu.',
     },
   ] satisfies MeetingCopy[],
   labels: {
@@ -106,7 +106,7 @@ export const MEETINGS = typeset({
     zapisy: 'Poproś o miejsce',
     'brak-miejsc': 'Zapytaj o kolejny termin',
   },
-  note: 'Miejsce i dokładny adres przekazujemy po potwierdzeniu udziału. Nie publikujemy list gości.',
+  note: 'Miejsce spotkania i dokładny adres podajemy po potwierdzeniu udziału. Nie publikujemy list gości.',
   photoCaption: 'Zdjęcie ilustracyjne',
 });
 
@@ -120,31 +120,31 @@ export type Level = {
 };
 
 export const CIRCLE = typeset({
-  title: 'Różne formy obecności. Wspólny standard.',
+  title: 'Jak uczestniczyć w THE ROOM',
   intro:
-    'THE ROOM łączy otwarte treści z bardziej kameralnymi formami spotkania. Każda z nich ma własny charakter i zasady dostępu.',
+    'THE ROOM łączy publikacje, Summity i Inner Circle. Każda z tych form ma własny charakter i zasady dostępu.',
   labels: { level: 'Poziom', audience: 'Dla kogo', access: 'Dostęp' },
   levels: [
     {
       number: '01',
-      name: 'Strona i Bookazine',
-      audience: 'Dla prawników, od starszego associate’a do partnera.',
+      name: 'Artykuły i Bookazine',
+      audience: 'Dla doświadczonych prawników — także tych, którzy nie prowadzą własnej kancelarii.',
       access:
-        'Treści strony są otwarte. Bookazine to planowane wydawnictwo THE ROOM, dostępne na zamówienie po uruchomieniu publikacji.',
-      status: { label: 'Bookazine', value: 'czerwiec 2027' },
+        'Artykuły na stronie będą dostępne dla wszystkich. Bookazine to drukowane wydawnictwo THE ROOM. Pierwszy numer będzie można zamówić po premierze.',
+      status: { label: 'Bookazine', value: 'w przygotowaniu' },
       action: { label: 'Poznaj tematy', href: '#redakcja' },
     },
     {
       number: '02',
       name: 'Summit',
-      audience: 'Dla partnerów i doświadczonych prawników, którzy kształtują lub zakładają kancelarię.',
-      access: 'Na zaproszenie lub zgłoszenie.',
+      audience: 'Dla partnerów i doświadczonych prawników, którzy odpowiadają za rozwój kancelarii lub zakładają własną.',
+      access: 'Możesz otrzymać zaproszenie lub zgłosić chęć udziału.',
       action: { label: 'Zobacz spotkania', href: '#spotkania' },
     },
     {
       number: '03',
       name: 'Inner Circle',
-      audience: 'Dla właścicieli i partnerów zarządzających.',
+      audience: 'Dla właścicieli kancelarii i partnerów zarządzających.',
       access: 'Wyłącznie na zaproszenie.',
     },
   ] satisfies Level[],
@@ -195,10 +195,11 @@ export const MANIFEST = typeset({
 });
 
 export const HOSTS = typeset({
-  title: 'Kto zaprasza do rozmowy.',
+  title: 'Gospodarze THE ROOM',
   intro:
-    'Za jakością kręgu stoją ludzie odpowiedzialni za temat, dobór gości i sposób prowadzenia spotkań.',
+    'Gospodarze wybierają tematy, zapraszają gości i prowadzą spotkania.',
   portraitPlaceholder: 'Portret w przygotowaniu',
+  initialsPlaceholder: '[Inicjały]',
 });
 
 export type Article = {
@@ -209,33 +210,33 @@ export type Article = {
 };
 
 export const EDITORIAL = typeset({
-  title: 'Pytania, które warto zabrać do rozmowy.',
+  title: 'O pracy prawnika i życiu poza kancelarią',
   intro:
-    'Kancelaria 2030, technologia, przestrzeń pracy i życie poza sprawami klientów. Cztery perspektywy na przyszłość zawodu.',
+    'Przygotowujemy teksty o tym, jak zmienia się zawód prawnika — od prowadzenia zespołu i korzystania z technologii po warunki pracy i odpoczynek.',
   pillarsTitle: 'Obszary redakcyjne',
   pillars: [
-    { name: 'Kancelaria 2030', body: 'Przywództwo, zespoły i przyszłe modele pracy.' },
-    { name: 'Legal Workspace', body: 'AI, narzędzia i cyfrowa organizacja pracy.' },
-    { name: 'Business Space', body: 'Środowisko kancelarii i warunki skupienia.' },
-    { name: 'Lifestyle', body: 'Życie obok spraw klientów.' },
+    { name: 'Kancelaria 2030', body: 'Prowadzenie kancelarii, zespoły i zmieniające się oczekiwania klientów.' },
+    { name: 'Legal Workspace', body: 'AI, narzędzia cyfrowe i organizacja codziennej pracy.' },
+    { name: 'Business Space', body: 'Biuro, w którym można się skupić i współpracować.' },
+    { name: 'Lifestyle', body: 'Zdrowie, odpoczynek, podróże i zainteresowania poza pracą.' },
   ],
   articlesTitle: 'Zapowiedzi tekstów',
   featured: {
     title: 'Co mierzymy, kiedy liczymy godziny?',
-    dek: 'O tym, co godzina mówi o pracy prawnika — i czego o niej nie mówi.',
+    dek: 'Co czas poświęcony sprawie mówi o jakości pracy prawnika i jej wartości dla klienta?',
     pillar: 'Kancelaria 2030',
     status: 'Zapowiedź tekstu',
   } satisfies Article,
   secondary: [
     {
-      title: 'AI w kancelarii. Co warto oddać narzędziom?',
-      dek: 'Gdzie narzędzia odciążają, a gdzie zaczyna się prawniczy osąd.',
+      title: 'AI w kancelarii. Co można jej powierzyć?',
+      dek: 'W jakich zadaniach AI może pomóc, a które decyzje powinny pozostać po stronie prawnika?',
       pillar: 'Legal Workspace',
       status: 'Zapowiedź tekstu',
     },
     {
-      title: 'Przestrzeń do skupienia. Jak środowisko kancelarii wspiera pracę?',
-      dek: 'O biurze, które nie jest tłem, lecz narzędziem.',
+      title: 'Biuro, w którym łatwiej się skupić',
+      dek: 'Jak urządzić kancelarię, żeby ułatwiała skupienie i codzienną pracę zespołu.',
       pillar: 'Business Space',
       status: 'Zapowiedź tekstu',
     },
@@ -245,46 +246,47 @@ export const EDITORIAL = typeset({
   publications: [
     {
       name: 'Bookazine 01',
-      body: 'Pierwszy numer wydawnictwa THE ROOM: rozmowy, eseje i fotografie wokół pytania „Koniec godziny?”.',
-      status: 'Czerwiec 2027',
+      body: 'Pierwszy numer drukowanego wydawnictwa THE ROOM: rozmowy, eseje i fotografie poświęcone wartości pracy prawnika.',
+      status: 'W przygotowaniu',
     },
     {
       name: 'Raport Stawek',
-      body: 'Badanie stawek i modeli rozliczeń w polskich kancelariach. Punkt odniesienia do rozmowy o wartości pracy.',
-      status: 'Wyniki jesienią 2027',
+      body: 'Planowany raport o stawkach za usługi prawne. [Zakres badania do potwierdzenia].',
+      status: 'W przygotowaniu',
     },
   ],
 });
 
 export const INVITATION = typeset({
-  title: 'Poproś o zaproszenie.',
+  title: 'Poproś o zaproszenie',
   description:
-    'Napisz, co Cię interesuje: krąg THE ROOM, Summit lub kolacja. Prośba o zaproszenie nie jest potwierdzeniem udziału.',
-  processTitle: 'Po wysłaniu prośby',
+    'Daj znać, czy interesuje Cię krąg THE ROOM, Summit czy kolacja. Wysłanie prośby nie oznacza jeszcze potwierdzenia udziału.',
+  processTitle: 'Co dalej?',
+  processDemoNote: 'W tej wersji możesz sprawdzić formularz, ale prośba nie zostanie wysłana.',
   faqTitle: 'Najczęstsze pytania',
   faq: [
     {
       q: 'Czy muszę prowadzić własną kancelarię?',
-      a: 'Otwarte treści są kierowane także do prawników, którzy nie prowadzą własnej kancelarii. Summit jest adresowany do partnerów i doświadczonych prawników kształtujących lub zakładających kancelarię. Inner Circle jest przeznaczony dla właścicieli i partnerów zarządzających.',
+      a: 'Nie. Otwarte publikacje THE ROOM są także dla prawników, którzy nie prowadzą własnej kancelarii. Summity są skierowane do partnerów i doświadczonych prawników, którzy odpowiadają za rozwój kancelarii lub zakładają własną. Inner Circle jest przeznaczony dla właścicieli kancelarii i partnerów zarządzających.',
     },
     {
       q: 'Czy potrzebuję polecenia?',
-      a: 'W formularzu możesz wskazać osobę polecającą.',
+      a: 'W obecnej wersji formularza pole „Kto Cię poleca?” jest opcjonalne.',
       fillable: 'referralRules',
     },
     {
       q: 'Czym różni się Summit od Inner Circle?',
-      a: 'O udział w Summicie można poprosić lub otrzymać zaproszenie. Inner Circle to najwęższy krąg, dostępny wyłącznie na zaproszenie.',
+      a: 'Na Summit można otrzymać zaproszenie lub zgłosić chęć udziału. Inner Circle to mniejszy krąg dla właścicieli kancelarii i partnerów zarządzających, dostępny wyłącznie na zaproszenie.',
     },
     {
       q: 'Co stanie się po wysłaniu prośby?',
-      a: 'Prośba nie oznacza automatycznego potwierdzenia udziału.',
+      a: 'Wysłanie prośby nie oznacza przyjęcia do kręgu ani potwierdzenia miejsca na spotkaniu.',
       fillable: 'contactProcess',
-      demoNote: 'W tej wersji strony formularz działa jako podgląd i nie wysyła zgłoszeń.',
+      demoNote: 'W tej wersji strony formularz służy wyłącznie do podglądu i nie wysyła próśb.',
     },
     {
       q: 'Kiedy poznam miejsce spotkania?',
-      a: 'Miejsce i dokładny adres są przekazywane po potwierdzeniu udziału. Publicznie nie udostępniamy list gości.',
+      a: 'Dokładne miejsce spotkania poznasz po potwierdzeniu udziału. Nie publikujemy list gości.',
     },
   ] as { q: string; a: string; fillable?: 'referralRules' | 'contactProcess'; demoNote?: string }[],
 });
@@ -293,41 +295,40 @@ export const FORM = typeset({
   title: 'Prośba o zaproszenie',
   intentLegend: 'Czego dotyczy prośba?',
   selectedMeeting: 'Wybrane spotkanie',
-  changeMeeting: 'Zmień',
-  removeMeeting: 'Usuń wybór spotkania',
+  changeMeeting: 'Zmień spotkanie',
+  removeMeeting: 'Usuń wybrane spotkanie',
   meetingCleared: 'Usunięto wybór spotkania. Prośba dotyczy formatu ogólnie.',
   optional: 'opcjonalnie',
   fields: {
     name: { label: 'Imię i nazwisko' },
     email: { label: 'E-mail' },
-    firm: { label: 'Kancelaria', help: 'Jeśli kancelaria dopiero powstaje, wpisz „w trakcie tworzenia”.' },
+    firm: { label: 'Kancelaria', help: 'Jeśli dopiero zakładasz kancelarię, wpisz: „w trakcie tworzenia”.' },
     city: { label: 'Miasto' },
-    referrer: { label: 'Kto Cię poleca?', help: 'Imię i nazwisko osoby z kręgu, jeśli ktoś Cię poleca.' },
-    message: { label: 'Wiadomość', help: 'Jakie pytanie lub temat chcesz wnieść do rozmowy?' },
+    referrer: { label: 'Kto Cię poleca?', help: 'Jeśli ktoś Cię poleca, wpisz imię i nazwisko tej osoby.' },
+    message: { label: 'Wiadomość', help: 'O czym chcesz porozmawiać w THE ROOM?' },
   },
   errors: {
     nameMissing: 'Wpisz imię i nazwisko.',
-    nameShort: 'Imię i nazwisko powinno mieć co najmniej 2 litery.',
+    nameShort: 'Wpisz pełne imię i nazwisko.',
     emailMissing: 'Wpisz adres e-mail.',
-    emailInvalid: 'Sprawdź adres e-mail. Powinien mieć postać nazwa@domena.pl.',
-    firmMissing: 'Wpisz nazwę kancelarii albo „w trakcie tworzenia”.',
-    summaryOne: 'Popraw 1 pole, aby sprawdzić prośbę:',
-    summaryMany: (n: number) => `Popraw ${n} ${n < 5 ? 'pola' : 'pól'}, aby sprawdzić prośbę:`,
+    emailInvalid: 'Sprawdź, czy adres e-mail jest poprawny.',
+    firmMissing: 'Wpisz nazwę kancelarii. Jeśli dopiero ją zakładasz, wpisz: „w trakcie tworzenia”.',
+    summary: 'Sprawdź zaznaczone pola.',
   },
   demo: {
-    notice: 'To podgląd formularza. Dane nie zostaną wysłane.',
-    submit: 'Sprawdź prośbę o zaproszenie',
-    success: 'Formularz jest wypełniony poprawnie. To podgląd — dane nie zostały wysłane.',
+    notice: 'To podgląd formularza — wpisane dane nie zostaną wysłane.',
+    submit: 'Sprawdź formularz',
+    success: 'Formularz jest wypełniony poprawnie. To podgląd — prośba nie została wysłana.',
   },
   live: {
     submit: 'Wyślij prośbę o zaproszenie',
     sending: 'Wysyłanie prośby…',
-    success: 'Prośba o zaproszenie dotarła. To nie jest jeszcze potwierdzenie udziału.',
-    error: 'Nie udało się wysłać prośby. Wpisane dane zostały w formularzu — spróbuj ponownie za chwilę.',
+    success: 'Dziękujemy. Otrzymaliśmy Twoją prośbę o zaproszenie. To jeszcze nie jest potwierdzenie udziału.',
+    error: 'Wystąpił problem podczas wysyłania prośby. Twoje dane pozostały w formularzu. Spróbuj ponownie za chwilę.',
   },
   privacy: {
-    title: 'Dane osobowe',
-    body: 'Dane z formularza posłużą wyłącznie do odpowiedzi na prośbę o zaproszenie.',
+    title: 'Prywatność',
+    body: 'Formularz służy wyłącznie do podglądu i nie wysyła próśb o zaproszenie.',
     link: 'Informacja o prywatności',
   },
 });
@@ -335,16 +336,13 @@ export const FORM = typeset({
 export const FOOTER = typeset({
   organizerLabel: 'Organizator',
   contactLabel: 'Kontakt',
-  draftStatus: 'Materiał roboczy',
+  draftStatus: 'Wersja robocza',
   legal: {
     title: 'Nota prawna',
   },
   privacy: {
     title: 'Prywatność',
-    facts: [
-      'W tej wersji strony formularz działa jako podgląd: nie wysyła i nie zapisuje wpisanych danych.',
-      'Strona nie korzysta z narzędzi analitycznych, pikseli reklamowych ani plików cookie służących śledzeniu.',
-    ],
+    facts: ['W tej wersji strony formularz służy wyłącznie do podglądu i nie wysyła próśb o zaproszenie.'],
     adminLabel: 'Administrator danych',
   },
   partners: {
@@ -352,7 +350,7 @@ export const FOOTER = typeset({
   },
   photos: {
     title: 'Fotografie',
-    intro: 'Zdjęcia ilustracyjne z serwisu Unsplash, na licencji Unsplash.',
+    intro: 'Zdjęcia ilustracyjne pochodzą z serwisu Unsplash.',
     license: 'Licencja Unsplash',
     licenseUrl: 'https://unsplash.com/license',
   },

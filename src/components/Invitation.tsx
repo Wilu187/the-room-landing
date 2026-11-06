@@ -63,6 +63,7 @@ export function Invitation() {
             <p>
               <Fill field={DANE.processAfterRequest} />
             </p>
+            {FORM_MODE === 'demo' && <p className="invitation__demo-note">{INVITATION.processDemoNote}</p>}
           </div>
 
           <div className="faq" data-reveal>
@@ -96,8 +97,9 @@ export function Invitation() {
           <InvitationForm />
           <div className="privacy-note">
             <p className="privacy-note__title">{FORM.privacy.title}</p>
+            {FORM_MODE === 'demo' && <p>{FORM.privacy.body}</p>}
             <p>
-              {FORM.privacy.body} Administrator danych: <Fill field={DANE.organizer} />.{' '}
+              <Fill field={DANE.formPrivacyInfo} />{' '}
               <a href="#prywatnosc" className="privacy-note__link">
                 {FORM.privacy.link}
               </a>

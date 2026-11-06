@@ -84,7 +84,7 @@ export function Footer() {
           <FooterDetails id="nota-prawna" title={FOOTER.legal.title}>
             <p className="footer-details__status">{FOOTER.draftStatus}</p>
             <p>
-              <Fill field={DANE.organizer} />. <Fill field={DANE.organizerRegistry} />.
+              <Fill field={DANE.organizerRegistry} />
             </p>
             <p>
               <Fill field={DANE.legalNote} />
@@ -97,8 +97,7 @@ export function Footer() {
               <p key={f}>{f}</p>
             ))}
             <p>
-              {FOOTER.privacy.adminLabel}: <Fill field={DANE.organizer} />. Kontakt:{' '}
-              {email ? <a href={`mailto:${email}`}>{email}</a> : <Fill field={DANE.contactEmail} />}.
+              <Fill field={DANE.privacyAdmin} />
             </p>
             <p>
               <Fill field={DANE.privacyClause} />
@@ -107,19 +106,22 @@ export function Footer() {
 
           <FooterDetails id="partnerzy" title={FOOTER.partners.title}>
             <p className="footer-details__status">{FOOTER.draftStatus}</p>
-            <ul className="partners">
-              {DANE.partners.map((p) => (
-                <li key={p.name}>
-                  {p.url ? (
-                    <a href={p.url} rel="noopener">
-                      {p.name}
-                    </a>
-                  ) : (
-                    <span>{p.name}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
+            {/* Lista marek pokazuje się dopiero razem z potwierdzonym opisem współpracy. */}
+            {DANE.partnersDescription.value && (
+              <ul className="partners">
+                {DANE.partners.map((p) => (
+                  <li key={p.name}>
+                    {p.url ? (
+                      <a href={p.url} rel="noopener">
+                        {p.name}
+                      </a>
+                    ) : (
+                      <span>{p.name}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
             <p>
               <Fill field={DANE.partnersDescription} />
             </p>

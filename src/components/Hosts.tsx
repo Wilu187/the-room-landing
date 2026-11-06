@@ -35,7 +35,9 @@ export function Hosts() {
                     {initials(h.name.value)}
                   </span>
                 ) : (
-                  <span className="host__portrait-placeholder">{HOSTS.portraitPlaceholder}</span>
+                  <span className="host__monogram host__monogram--placeholder">
+                    <span className="ph">{HOSTS.initialsPlaceholder}</span>
+                  </span>
                 )}
               </div>
               <div className="host__text">

@@ -4,10 +4,8 @@
  * Każde pole ma `value` (treść pokazywana na stronie) oraz `placeholder`
  * (tekst w nawiasie, pokazywany, gdy `value` jest `null`).
  *
- * ⚠ DANE PRZYKŁADOWE (decyzja z 06.11.2026): wszystkie wartości `value` poniżej
- * są fikcyjne — osoby, daty, miasta, adres, e-mail i teksty prawne zostały
- * wymyślone, żeby stronę dobrze się czytało. Przed publikacją podmień każdą
- * wartość na potwierdzoną albo ustaw `null`, aby wrócił placeholder.
+ * Wszystkie wartości `value` są puste (`null`) do czasu otrzymania potwierdzonych danych —
+ * na stronie widać wtedy placeholder w nawiasie kwadratowym. Nie wpisuj tu danych wymyślonych.
  */
 
 export type Fillable = {
@@ -15,8 +13,7 @@ export type Fillable = {
   placeholder: string;
 };
 
-/** `demo` — fikcyjna wartość przykładowa; zamień na prawdziwą przed publikacją. */
-const field = (placeholder: string, demo: string | null = null): Fillable => ({ value: demo, placeholder });
+const field = (placeholder: string, value: string | null = null): Fillable => ({ value, placeholder });
 
 /** Status terminu spotkania. Zmieniaj dopiero po potwierdzeniu daty i miejsca. */
 export type Availability =
@@ -48,91 +45,65 @@ export type PartnerData = {
 };
 
 export const DANE = {
-  organizer: field('[Nazwa organizatora]', 'Fundacja THE ROOM'),
+  organizer: field('[Nazwa organizatora]'),
   /** Gdy adres jest wpisany, w stopce pojawia się aktywny link mailto. */
-  contactEmail: field('[E-mail kontaktowy]', 'kontakt@theroom.pl'),
-  organizerRegistry: field('[Dane rejestrowe i adres organizatora]', 'Siedziba: ul. Mokotowska 24/3, 00-561 Warszawa'),
+  contactEmail: field('[E-mail kontaktowy]'),
+  organizerRegistry: field('[Dane rejestrowe i adres organizatora.]'),
 
-  referralRules: field(
-    '[Zasady poleceń do uzupełnienia przez organizatora]',
-    'Polecenie nie jest wymagane. Jeśli je wskażesz, poprosimy tę osobę wyłącznie o krótkie potwierdzenie.',
-  ),
-  processAfterRequest: field(
-    '[Sposób kontaktu po zgłoszeniu do uzupełnienia]',
-    'Każdą prośbę czytamy osobiście. Odpowiadamy e-mailem w ciągu 14 dni.',
-  ),
-  contactProcess: field(
-    '[Opis rzeczywistego procesu kontaktu do uzupełnienia]',
-    'Odpowiadamy e-mailem w ciągu 14 dni. Jeśli prośba dotyczy konkretnego spotkania, potwierdzamy miejsce albo proponujemy kolejny termin.',
-  ),
+  referralRules: field('[Zasady poleceń i ich znaczenie przy rozpatrywaniu próśb do potwierdzenia przez organizatora.]'),
+  processAfterRequest: field('[Sposób kontaktu i dalsze kroki do potwierdzenia przez organizatora.]'),
+  contactProcess: field('[Sposób kontaktu i dalsze kroki do potwierdzenia przez organizatora.]'),
 
-  privacyClause: field(
-    '[Treść klauzuli informacyjnej do uzupełnienia]',
-    'Dane przetwarzamy na podstawie art. 6 ust. 1 lit. b i f RODO, wyłącznie po to, by odpowiedzieć na prośbę o zaproszenie i zorganizować spotkanie. Przechowujemy je przez 12 miesięcy od ostatniego kontaktu. Masz prawo dostępu do danych, ich sprostowania, usunięcia i ograniczenia przetwarzania, a także prawo wniesienia skargi do Prezesa UODO.',
-  ),
-  legalNote: field(
-    '[Treść noty prawnej do uzupełnienia]',
-    'Treści publikowane na stronie mają charakter informacyjny i nie stanowią porady prawnej. Prawa do tekstów i znaku THE ROOM należą do organizatora lub autorów.',
-  ),
-  partnersDescription: field(
-    '[Opis współpracy z partnerami do uzupełnienia]',
-    'Partnerzy wspierają THE ROOM wiedzą i przestrzenią do spotkań. Nie wpływają na dobór tematów ani gości.',
-  ),
+  /** Pod formularzem: informacja o przetwarzaniu danych przed uruchomieniem prawdziwej wysyłki. */
+  formPrivacyInfo: field('[Informacja o przetwarzaniu danych do uzupełnienia i zatwierdzenia przed uruchomieniem formularza.]'),
+  privacyAdmin: field('[Administrator danych i dane kontaktowe do uzupełnienia.]'),
+  privacyClause: field('[Treść informacji o przetwarzaniu danych do uzupełnienia i zatwierdzenia przed uruchomieniem zgłoszeń.]'),
+  legalNote: field('[Treść noty prawnej do uzupełnienia i zatwierdzenia.]'),
+  /** Dopóki opis jest pusty, w stopce widać tylko placeholder (lista partnerów poniżej czeka na potwierdzenie). */
+  partnersDescription: field('[Potwierdzeni partnerzy i opis współpracy do uzupełnienia.]'),
 
   /** Autorzy zapowiadanych tekstów, w kolejności: tekst główny, potem dwa mniejsze. */
   articleAuthors: [
-    field('[Autor do uzupełnienia]', 'Joanna Kordecka'),
-    field('[Autor do uzupełnienia]', 'Tomasz Wielgosz'),
-    field('[Autor do uzupełnienia]', 'Natalia Brzeska'),
+    field('[Autor do uzupełnienia]'),
+    field('[Autor do uzupełnienia]'),
+    field('[Autor do uzupełnienia]'),
   ],
 
   events: {
     'summit-01': {
-      city: field('[Miasto]', 'Warszawa'),
-      date: field('[Data do potwierdzenia]', '14 maja 2027'),
-      host: field('[Imię i nazwisko gospodarza]', 'Joanna Kordecka'),
-      seats: field('[Liczba miejsc do potwierdzenia]', '40'),
-      availability: 'zapisy',
+      city: field('[Miasto]'),
+      date: field('[Data do potwierdzenia]'),
+      host: field('[Imię i nazwisko gospodarza]'),
+      seats: field('[Liczba miejsc do potwierdzenia]'),
+      availability: 'w-przygotowaniu',
     },
     'kolacja-01': {
-      city: field('[Miasto]', 'Kraków'),
-      date: field('[Data do potwierdzenia]', '11 marca 2027, 19:00'),
-      host: field('[Imię i nazwisko gospodarza]', 'Tomasz Wielgosz'),
-      seats: field('[Liczba miejsc do potwierdzenia]', '12'),
-      availability: 'zapisy',
+      city: field('[Miasto]'),
+      date: field('[Data i godzina do potwierdzenia]'),
+      host: field('[Imię i nazwisko gospodarza]'),
+      seats: field('[Liczba miejsc do potwierdzenia]'),
+      availability: 'w-przygotowaniu',
     },
   } satisfies Record<string, EventData>,
 
   hosts: [
     {
-      name: field('[Imię i nazwisko]', 'Joanna Kordecka'),
-      role: field('[Rola w THE ROOM]', 'Współzałożycielka, gospodyni Summitu'),
-      experience: field(
-        '[Krótka informacja o doświadczeniu]',
-        'Adwokatka od 2008 roku. Partnerka zarządzająca kancelarii doradzającej w transakcjach i sporach korporacyjnych.',
-      ),
-      motivation: field(
-        '[Dwa zdania o powodach tworzenia inicjatywy]',
-        '„O prowadzeniu kancelarii rozmawiamy zwykle po godzinach i w pośpiechu. Chciałam miejsca, w którym ta rozmowa jest tematem, a nie dodatkiem.”',
-      ),
+      name: field('[Imię i nazwisko]'),
+      role: field('[Rola w THE ROOM]'),
+      experience: field('[Krótka informacja o doświadczeniu zawodowym]'),
+      motivation: field('[Autoryzowana wypowiedź o powodach tworzenia THE ROOM]'),
       portrait: null,
     },
     {
-      name: field('[Imię i nazwisko]', 'Tomasz Wielgosz'),
-      role: field('[Rola w THE ROOM]', 'Współzałożyciel, gospodarz kolacji'),
-      experience: field(
-        '[Krótka informacja o doświadczeniu]',
-        'Radca prawny od 2011 roku. Prowadzi własną kancelarię obsługującą firmy technologiczne i rodzinne.',
-      ),
-      motivation: field(
-        '[Dwa zdania o powodach tworzenia inicjatywy]',
-        '„Ważne decyzje o mojej kancelarii zapadały przy stole, w rozmowach z innymi prawnikami. Chcę, żeby takie rozmowy przestały być przypadkiem.”',
-      ),
+      name: field('[Imię i nazwisko]'),
+      role: field('[Rola w THE ROOM]'),
+      experience: field('[Krótka informacja o doświadczeniu zawodowym]'),
+      motivation: field('[Autoryzowana wypowiedź o powodach tworzenia THE ROOM]'),
       portrait: null,
     },
   ] satisfies HostData[],
 
-  /** Adresy zostaw puste, dopóki nie zostaną potwierdzone. Nie zgaduj domen. */
+  /** Wewnętrzne zestawienie marek z briefu — do potwierdzenia; na stronie nie są wyświetlane. */
   partners: [
     { name: 'ADVOSYNC', url: null },
     { name: 'MODUCTRL', url: null },

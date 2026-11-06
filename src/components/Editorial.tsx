@@ -87,7 +87,17 @@ export function Editorial() {
             {EDITORIAL.publications.map((p) => (
               <li key={p.name} className="publication">
                 <p className="publication__name">{p.name}</p>
-                <p className="publication__body">{p.body}</p>
+                <p className="publication__body">
+                  {p.body.split(/(\[[^\]]+\])/).map((part, i) =>
+                    part.startsWith('[') ? (
+                      <span key={i} className="ph">
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    ),
+                  )}
+                </p>
                 <p>
                   <span className="tag">{p.status}</span>
                 </p>
