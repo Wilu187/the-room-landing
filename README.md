@@ -30,6 +30,11 @@ Walidację po stronie serwera trzeba zbudować razem z endpointem. Opis oczekiwa
 ## Struktura
 
 ```
+index.html               ← szablon strony (Vite wstawia do niego wyrenderowaną treść)
+docs/
+  TRESC-STRONY.md        ← cała treść strony sekcja po sekcji
+  DESIGN.md              ← system wizualny: kolory, typografia, komponenty
+  PRODUCT.md             ← dla kogo jest strona i jaki ma cel
 src/
   content/
     do-uzupelnienia.ts   ← WSZYSTKIE brakujące dane (organizator, e-mail, gospodarze, terminy, partnerzy…)
