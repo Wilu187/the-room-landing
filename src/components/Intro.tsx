@@ -28,7 +28,7 @@ export function Intro() {
               <stop offset="1" stopColor="#e4ddd2" stopOpacity="0" />
             </linearGradient>
             <clipPath id="intro-room-clip">
-              <rect x="0.75" y="0.75" width="89.5" height="89.5" />
+              <rect x="0.75" y="0.75" width="89.5" height="89.5" rx="17.7" />
             </clipPath>
             <linearGradient id="intro-wm-grad" gradientUnits="userSpaceOnUse" x1="78" y1="0" x2="118" y2="0">
               <stop offset="0" stopColor="#fff" />
@@ -40,7 +40,7 @@ export function Intro() {
           </defs>
           <g data-intro="world">
             {/* zaciemnione wnętrze pokoju: gaśnie, gdy ściany się zamkną; ciepło zapala się przy przewijaniu */}
-            <rect data-intro="room" x="0.75" y="0.75" width="89.5" height="89.5" fill="#2e2721" opacity="0" />
+            <rect data-intro="room" x="0.75" y="0.75" width="89.5" height="89.5" rx="17.7" fill="#2e2721" opacity="0" />
             {/* jasne światło z zewnątrz wpada przez otwarte drzwi do środka */}
             <polygon
               data-intro="spill"
@@ -49,10 +49,10 @@ export function Intro() {
               fill="url(#intro-beam-grad)"
               opacity="0"
             />
-            {/* ściany: jedna linia od progu dookoła z powrotem do progu (jak w dostarczonym sygnecie) */}
+            {/* ściany: jedna linia od progu dookoła z powrotem do progu; narożniki z promieniem jak w znaku ADVOSYNC (20,3% boku) */}
             <path
               data-intro="walls"
-              d="M 19.35 90.25 L 0.75 90.25 L 0.75 0.75 L 90.25 0.75 L 90.25 90.25 L 71.65 90.25"
+              d="M 19.35 90.25 L 18.45 90.25 A 17.7 17.7 0 0 1 0.75 72.55 L 0.75 18.45 A 17.7 17.7 0 0 1 18.45 0.75 L 72.55 0.75 A 17.7 17.7 0 0 1 90.25 18.45 L 90.25 72.55 A 17.7 17.7 0 0 1 72.55 90.25 L 71.65 90.25"
               fill="none"
               stroke="#2e2721"
               strokeWidth="1.5"

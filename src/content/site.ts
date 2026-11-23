@@ -359,6 +359,8 @@ export const FOOTER = typeset({
     license: 'Licencja Unsplash',
     licenseUrl: 'https://unsplash.com/license',
   },
+  /** Dopisek przy znaku według wytycznych marki ADVOSYNC (Brand Basics v1.1): zawsze po angielsku, krojem Fragment Mono. */
+  credit: 'A project of ADVOSYNC',
   closing: 'Pokój dla tych, którzy prowadzą.',
   year: '2026',
 });

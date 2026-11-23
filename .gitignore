@@ -1,8 +1,8 @@
 node_modules
 dist
 dist-ssr
+
+# śmieci po narzędziach (profile przeglądarki, zrzuty z przeglądów)
 .cdp-profile-*
-.impeccable/review/
-.impeccable/questions/
-.impeccable/mocks/
-.impeccable/config.local.json
+.chrome-*
+.impeccable/

@@ -24,8 +24,16 @@
     <script>
       // Wejście na stronę (logo, drzwi, przejście do środka) - włączane przed pierwszym rysowaniem, żeby nie mignęła
       // zwykła strona. Pomijane, gdy adres prowadzi do konkretnej sekcji (#…): wtedy strona otwiera się od razu tam.
+      // Pokazywane raz na sesję (sessionStorage): kolejne wejścia w tej samej karcie otwierają od razu hero.
       (function () {
         if (location.hash) return;
+        var KEY = 'theroom:intro-seen';
+        try {
+          if (sessionStorage.getItem(KEY)) return;
+          sessionStorage.setItem(KEY, '1');
+        } catch (e) {
+          // sessionStorage niedostępny (np. zablokowane ciasteczka): intro gra przy każdym wejściu, jak dotąd
+        }
         var d = document.documentElement;
         d.classList.add('intro-on');
         d.setAttribute('data-intro', 'stage');

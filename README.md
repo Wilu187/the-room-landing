@@ -30,6 +30,11 @@ Walidację po stronie serwera trzeba zbudować razem z endpointem. Opis oczekiwa
 ## Struktura
 
 ```
+index.html               ← szablon strony (Vite wstawia do niego wyrenderowaną treść)
+docs/
+  TRESC-STRONY.md        ← cała treść strony sekcja po sekcji
+  DESIGN.md              ← system wizualny: kolory, typografia, komponenty
+  PRODUCT.md             ← dla kogo jest strona i jaki ma cel
 src/
   content/
     do-uzupelnienia.ts   ← WSZYSTKIE brakujące dane (organizator, e-mail, gospodarze, terminy, partnerzy…)
@@ -52,17 +57,17 @@ Identyfikatory sekcji: `start`, `temat-roku`, `spotkania`, `krag`, `manifest`, `
 ## Najważniejsze decyzje
 
 - **Hero:** typografia i informacja o kręgu przed obrazem (ok. 60/40). Zdjęcie dłoni nad notatnikiem stoi w cienkiej ramie z „wejściem” u dołu - echo sygnetu THE ROOM. Rama nie jest nowym znakiem, tylko linią z gliny. Na telefonie tekst i CTA są przed zdjęciem.
-- **Logo:** oryginalne pliki SVG bez modyfikacji (`light/` brązowe na jasnym tle, `dark/` jasne w manifeście). Wysokość 34–40 px, sprawdzona w rzeczywistej skali.
+- **Logo:** pliki SVG z paczki klienta. Jedyna zmiana: narożniki kwadratu mają promień jak znak ADVOSYNC (20,3% boku, wymóg Brand Basics v1.1; dotyczy też sygnetów, faviconu i rysowania ścian w intro). Ciemne logo na jasnym tle, jasne w manifeście i stopce. Wysokość 34–40 px, sprawdzona w rzeczywistej skali.
 - **Kolor:** dominuje jasna wersja; jedyną ciemną sekcją jest manifest. Glina #9A6B4F wyłącznie w ornamentach i dużych numerach 01–03, nigdy w drobnym tekście na jasnym tle. Tekst drugorzędny #625549 ma kontrast 6,3:1.
 - **Numery 01–03** występują tylko w sekcji kręgu. Manifest używa zwykłej numeracji 1–10.
 - **Krąg** jest tabelą zasad dostępu, a nie pakietami: bez cen, „najpopularniejszy” i przycisku zapisu do Inner Circle.
 - **CTA spotkań** („Poproś o miejsce”, a bez potwierdzonego terminu „Zapytaj o udział”) przewijają do `#formularz`, ustawiają intencję i spotkanie, pokazują je w podsumowaniu z „Zmień” / „Usuń wybór spotkania” i nie kasują wpisanych danych. Stan „Brak miejsc” jest obsłużony w danych (`availability`), ale nieużywany.
 - **Zapowiedzi redakcyjne** są nieklikalne, oznaczone „Zapowiedź tekstu”; autorzy czekają na uzupełnienie (patrz niżej).
-- **Fonty:** EB Garamond (400, 500) i Inter Variable, hostowane lokalnie, tylko zestawy latin i latin-ext (polskie znaki), `font-display: swap`, preload krojów pierwszego ekranu.
+- **Fonty:** EB Garamond (400, 500) i Inter Variable, a do dopisku ADVOSYNC Fragment Mono 400 (sam zestaw latin), hostowane lokalnie, tylko zestawy latin i latin-ext (polskie znaki), `font-display: swap`, preload krojów pierwszego ekranu.
 - **Ruch** (`src/styles/motion.css`): jeden autorski moment, „wejście do pokoju” w hero. Rama z gliny rysuje się od progu, zdjęcie otwiera się przez wejście Λ z sygnetu, a wiersze tytułu wychodzą spod progu (ok. 1,4 s, raz, czysty CSS). Echo motywu: zdjęcia spotkań wchodzą tym samym wejściem, linie nad listami dorysowują się od lewej. Do tego jednorazowe wejście sekcji (12 px, 520 ms), przejścia 180 ms i rozwijanie 220 ms. Stan końcowy każdej animacji to statyczny wygląd strony, więc treść jest widoczna bez JS. Przy `prefers-reduced-motion` nie ma rysowania ani przesunięć, zostaje tylko łagodne pojawienie się zdjęcia w hero.
 - **Manifest: galeria kart** (`src/components/Manifest.tsx`, `src/lib/gallery.ts`): 10 punktów manifestu widać od razu, bez przycisku „Przeczytaj pełny manifest”. Karty w kamiennej bieli (rogi 0) jadą po łuku, w stylu „Circular Gallery” z React Bits, w nieskończonej pętli. Na karcie jest nagłówek i opis punktu, a pod kartą jego numer. Sterowanie: przeciąganie z rozpędem i dociąganiem, poziomy gest touchpada, strzałki na klawiaturze i dwa przyciski. Pionowe kółko myszy przewija stronę, a nie galerię. Karty to zwykły tekst HTML (nie WebGL), więc czytają je czytniki ekranu, a bez JS galeria jest poziomym paskiem z przewijaniem.
-- **Wejście na stronę** (`src/components/Intro.tsx`, `src/lib/intro.ts`, `src/styles/intro.css`, skrypt w `<head>` w `index.html`): na jasnym tle (kamienna biel przez cały czas) brązowa linia rysuje ściany sygnetu, wnętrze pokoju gaśnie (ciemny jest tylko kwadrat), prawe skrzydło drzwi obraca się na zawiasie i ląduje dokładnie na prawym ramieniu Λ, lewa linia (50% krycia) pojawia się na końcu, potem odsłania się „THE ROOM”, zdanie o kręgu i „Wejdź”. Przez otwarte drzwi do ciemnego pokoju wpada smuga jasnego światła. Przewijanie (albo „Wejdź”) ciepło zapala pokój (brąz → glina → kamienna biel) i przeprowadza przez drzwi do hero; przewinięcie w górę cofa scenę. Wejście jest pomijane, gdy adres prowadzi do sekcji (np. `/#formularz`), a przy `prefers-reduced-motion` logo stoi jako spokojna okładka. Nagłówek jest stały (`position: fixed`) i pojawia się dopiero po wejściu do środka. Prerenderowany HTML bez JS pokazuje zwykłą stronę.
-- **Stopka:** głęboki brąz #1E1915 (ciemniejszy niż manifest), jasne logo, teksty w kamiennej bieli.
+- **Wejście na stronę** (`src/components/Intro.tsx`, `src/lib/intro.ts`, `src/styles/intro.css`, skrypt w `<head>` w `index.html`): na jasnym tle (kamienna biel przez cały czas) brązowa linia rysuje ściany sygnetu, wnętrze pokoju gaśnie (ciemny jest tylko kwadrat), prawe skrzydło drzwi obraca się na zawiasie i ląduje dokładnie na prawym ramieniu Λ, lewa linia (50% krycia) pojawia się na końcu, potem odsłania się „THE ROOM”, zdanie o kręgu i „Wejdź”. Przez otwarte drzwi do ciemnego pokoju wpada smuga jasnego światła. Przewijanie (albo „Wejdź”) ciepło zapala pokój (brąz → glina → kamienna biel) i przeprowadza przez drzwi do hero; przewinięcie w górę cofa scenę. Wejście gra raz na sesję (flaga `theroom:intro-seen` w `sessionStorage`; kolejne wejścia w tej samej karcie otwierają od razu hero) i jest pomijane, gdy adres prowadzi do sekcji (np. `/#formularz`), a przy `prefers-reduced-motion` logo stoi jako spokojna okładka. Nagłówek jest stały (`position: fixed`) i pojawia się dopiero po wejściu do środka. Prerenderowany HTML bez JS pokazuje zwykłą stronę.
+- **Stopka:** głęboki brąz #1E1915 (ciemniejszy niż manifest), jasne logo, pod nim „A project of ADVOSYNC” (Fragment Mono, wersaliki, jak w wytycznych marki), teksty w kamiennej bieli.
 - **SEO:** `lang="pl"`, tytuł z briefu, opis i Open Graph, `noindex, nofollow`, dopóki strona zawiera placeholdery, bez danych strukturalnych.
 
 ## Placeholdery - dane do uzupełnienia
@@ -102,5 +107,5 @@ Osób ze zdjęć nie przedstawiamy jako gospodarzy ani uczestników.
 
 ## Kroje i logo
 
-- EB Garamond i Inter - SIL Open Font License (`src/assets/fonts/*-OFL.txt`).
-- Logo THE ROOM (SVG) - pliki dostarczone przez klienta, bez zmian.
+- EB Garamond, Inter i Fragment Mono - SIL Open Font License (`src/assets/fonts/*-OFL.txt`).
+- Logo THE ROOM (SVG) - pliki dostarczone przez klienta; zaokrąglone narożniki kwadratu zgodnie z wytycznymi marki ADVOSYNC.
