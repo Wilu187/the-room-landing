@@ -64,6 +64,9 @@ export function Footer() {
             <span role="img" aria-label="THE ROOM">
               <Logo variant="light" className="site-footer__logo" />
             </span>
+            <p className="site-footer__credit" lang="en">
+              {FOOTER.credit}
+            </p>
             <p className="site-footer__line">{FOOTER.closing}</p>
           </div>
           <dl className="site-footer__contact">

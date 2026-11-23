@@ -254,6 +254,17 @@ main:focus {
   width: auto;
 }
 
+/* „A project of ADVOSYNC” - etykieta z wytycznych marki: Fragment Mono 400, 12 px, wersaliki, +0.06 em */
+.site-footer__credit {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper-soft);
+}
+
 .site-footer__line {
   margin-top: 20px;
   font-family: var(--font-serif);
